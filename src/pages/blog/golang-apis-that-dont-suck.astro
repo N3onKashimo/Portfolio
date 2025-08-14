@@ -1,0 +1,241 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+const post = {
+  title: "Building Go APIs That Don't Suck: A Designer's Guide",
+  date: "2024-12-14",
+  readTime: "7 min read",
+  category: "Golang",
+  excerpt:
+    "Lessons learned from designing and building Go APIs at Google that prioritize developer experience and human usability.",
+  slug: "golang-apis-that-dont-suck",
+};
+---
+
+<BlogLayout post={post}>
+  <p>
+    <strong>Hot take:</strong> Most APIs are designed by engineers for engineers,
+    which explains why they're often terrible UX.
+  </p>
+
+  <p>
+    As a UX designer who codes Go at Google, I've learned that <strong
+      >APIs are user interfaces too</strong
+    >. The users just happen to be developers instead of end customers.
+  </p>
+
+  <h2>API Design is UX Design 🎨</h2>
+
+  <h3>The Mindset Shift</h3>
+
+  <p>Instead of thinking "What can this system do?" ask:</p>
+  <ul>
+    <li><strong>"What does the developer want to accomplish?"</strong></li>
+    <li><strong>"What's the most intuitive way to express this?"</strong></li>
+    <li>
+      <strong>"How do we make errors helpful instead of cryptic?"</strong>
+    </li>
+  </ul>
+
+  <h2>Go's API Design Superpowers</h2>
+
+  <h3>1. Types as Documentation</h3>
+
+  <pre><code>// Bad: Vague and confusing
+func CreateUser(data map[string]interface&#123;&#125;) error
+
+// Good: Self-documenting
+type CreateUserRequest struct &#123;
+    Email    string `json:"email" validate:"required,email"`
+    Name     string `json:"name" validate:"required,min=2"`
+    Role     Role   `json:"role" validate:"required"`
+&#125;
+
+func CreateUser(req CreateUserRequest) (*User, error)</code></pre>
+
+  <p>
+    <strong>The type tells a story.</strong> What's required? What format? What are
+    the constraints? All clear from the signature.
+  </p>
+
+  <h3>2. Errors That Actually Help</h3>
+
+  <pre><code>// Bad: Panic-inducing
+return fmt.Errorf("invalid input")
+
+// Good: Actionable guidance
+return fmt.Errorf("email '%s' is invalid: must be a valid email address (example: user@domain.com)", email)
+
+// Even better: Structured errors
+type ValidationError struct &#123;
+    Field   string `json:"field"`
+    Value   string `json:"value"`
+    Message string `json:"message"`
+    Code    string `json:"code"`
+&#125;</code></pre>
+
+  <p>
+    <strong>Error messages are microcopy.</strong> Make them helpful, not hostile.
+  </p>
+
+  <h3>3. Consistent Response Patterns</h3>
+
+  <pre><code>// Standard error response
+type ErrorResponse struct &#123;
+    Error   string            `json:"error"`
+    Code    string            `json:"code"`
+    Details map[string]string `json:"details,omitempty"`
+&#125;</code></pre>
+
+  <h3>4. Thoughtful Defaults</h3>
+
+  <pre><code>type UploadConfig struct &#123;
+    MaxSize     int64             `json:"max_size,omitempty"`
+    AllowedTypes []string         `json:"allowed_types,omitempty"`
+    Compress    bool              `json:"compress"`
+    Metadata    map[string]string `json:"metadata,omitempty"`
+&#125;
+
+type UploadResponse struct &#123;
+    FileID      string            `json:"file_id"`
+    URL         string            `json:"url"`
+    Size        int64             `json:"size"`
+    ContentType string            `json:"content_type"`
+&#125;</code></pre>
+
+  <h2>Real-World API Patterns That Work</h2>
+
+  <h3>Request/Response Wrapping</h3>
+
+  <pre><code>// Wrap everything in a consistent structure
+type CreateUserRequest struct &#123;
+    Name     string `json:"name" validate:"required"`
+    Email    string `json:"email" validate:"required,email"`
+    Password string `json:"password" validate:"required,min=8"`
+&#125;</code></pre>
+
+  <h3>Standard Response Envelope</h3>
+
+  <pre><code>type APIResponse[T any] struct &#123;
+    Success   bool              `json:"success"`
+    Data      T                 `json:"data"`
+    Error     *ErrorResponse    `json:"error,omitempty"`
+    Meta      map[string]any    `json:"meta,omitempty"`
+    RequestID string            `json:"request_id"`
+    Timestamp time.Time         `json:"timestamp"`
+&#125;</code></pre>
+
+  <h2>Pagination That Doesn't Suck</h2>
+
+  <pre><code>type PaginationParams struct &#123;
+    Page     int    `json:"page" validate:"min=1"`
+    Limit    int    `json:"limit" validate:"min=1,max=100"`
+    SortBy   string `json:"sort_by,omitempty"`
+    SortDir  string `json:"sort_dir,omitempty" validate:"oneof=asc desc"`
+    Search   string `json:"search,omitempty"`
+&#125;</code></pre>
+
+  <h3>Include Everything Developers Need:</h3>
+
+  <pre><code>type UserListResponse struct &#123;
+    Users      []User `json:"users"`
+    Pagination struct &#123;
+        CurrentPage  int  `json:"current_page"`
+        TotalPages   int  `json:"total_pages"`
+        TotalItems   int  `json:"total_items"`
+        ItemsPerPage int  `json:"items_per_page"`
+        HasNext      bool `json:"has_next"`
+        HasPrev      bool `json:"has_prev"`
+    &#125; `json:"pagination"`
+&#125;</code></pre>
+
+  <h2>Documentation as Code</h2>
+
+  <p>Your Go structs ARE your API documentation when done right:</p>
+
+  <pre><code>type User struct &#123;
+    ID       string    `json:"id" example:"usr_123456789"`
+    Email    string    `json:"email" example:"user@example.com"`
+    Name     string    `json:"name" example:"Jane Smith"`
+    Role     string    `json:"role" example:"admin" enums:"admin,user,viewer"`
+    Created  time.Time `json:"created_at"`
+    LastSeen time.Time `json:"last_seen_at"`
+&#125;</code></pre>
+
+  <h2>Error Handling Philosophy</h2>
+
+  <pre><code>// Production-ready error handling
+func (s *UserService) GetUser(id string) (*User, error) &#123;
+    if id == "" &#123;
+        return nil, &ValidationError&#123;
+            Field:   "id",
+            Message: "User ID is required",
+            Code:    "MISSING_USER_ID",
+        &#125;
+    &#125;
+    
+    user, err := s.repo.GetByID(id)
+    if err != nil &#123;
+        if errors.Is(err, sql.ErrNoRows) &#123;
+            return nil, &NotFoundError&#123;
+                Resource: "user",
+                ID:       id,
+                Code:     "USER_NOT_FOUND",
+            &#125;
+        &#125;
+        return nil, fmt.Errorf("failed to get user: %w", err)
+    &#125;
+    
+    return user, nil
+&#125;</code></pre>
+
+  <h2>The 15-Minute Rule</h2>
+
+  <p>A new developer should be able to:</p>
+  <ul>
+    <li><strong>Understand your API</strong> in 5 minutes</li>
+    <li><strong>Make their first successful call</strong> in 10 minutes</li>
+    <li><strong>Build something useful</strong> in 15 minutes</li>
+  </ul>
+
+  <p>If it takes longer, your API UX needs work.</p>
+
+  <h2>Tools That Help</h2>
+
+  <ul>
+    <li>
+      <strong>Swagger/OpenAPI:</strong> Generate docs from your Go structs
+    </li>
+    <li><strong>Postman Collections:</strong> Make testing easy</li>
+    <li><strong>Go Playground examples:</strong> Let people experiment</li>
+    <li><strong>SDK generation:</strong> Reduce integration friction</li>
+  </ul>
+
+  <h2>The Kawaii Touch</h2>
+
+  <p>
+    Even APIs can have personality! Your error messages don't have to be cold
+    and robotic:
+  </p>
+
+  <blockquote>
+    <p>
+      "Oops! That email address looks a bit funky. Mind double-checking it?
+      We're expecting something like user@domain.com 🌸"
+    </p>
+  </blockquote>
+
+  <p>Just remember: <strong>helpful first, personality second.</strong></p>
+
+  <h2>Testing Your API UX</h2>
+
+  <p>
+    Give your API to someone who's never seen it before. Watch them try to use
+    it. The places they get confused? Those are your UX problems.
+  </p>
+
+  <p>
+    Build APIs that feel intuitive, not just functional. Your future self (and
+    your teammates) will thank you. ✨
+  </p>
+</BlogLayout>
