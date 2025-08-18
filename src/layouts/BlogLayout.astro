@@ -8,17 +8,25 @@ export interface BlogPost {
   slug?: string;
 }
 
-interface Props {
-  post: BlogPost;
-}
+interface Props { post: BlogPost; }
 
 const { post } = Astro.props;
 const currentYear = new Date().getFullYear();
 
+// ✅ YOUR identity + site
+const NAME = "Idi Ooko";
+const SITE = "https://ididev.netlify.app";  // <-- your live domain
+const TWITTER_HANDLE = "@<your_twitter>";    // or "" if none
+const LINKEDIN_URL = "https://www.linkedin.com/in/imooko/";
+
 // Generate slug from title if not provided
 const slug = post.slug || post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-const fullUrl = `https://veronikadev.netlify.app/blog/${slug}`;
-const defaultImage = "https://veronikadev.netlify.app/png/me_posing_front_google_office_with_golang_shirt.png";
+
+// ✅ Use your domain to build canonical/OG URLs
+const fullUrl = `${SITE}/blog/${slug}`;
+
+// ✅ Use a preview image you actually host (1200×630 recommended)
+const defaultImage = `${SITE}/png/preview.jpg`; // put preview.jpg in /public/png/
 ---
 
 <!doctype html>
@@ -29,39 +37,39 @@ const defaultImage = "https://veronikadev.netlify.app/png/me_posing_front_google
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={post.excerpt} />
-    <meta name="keywords" content={`${post.category}, UX Design, UI Development, Veronika Flores, Google Engineer, ${post.title.split(' ').join(', ')}`} />
-    <meta name="author" content="Veronika Flores" />
+    <meta name="keywords" content={`${post.category}, UX Design, UI Development, Idi Ooko, Google Engineer, ${post.title.split(' ').join(', ')}`} />
+    <meta name="author" content="Idi Ooko" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="English" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article" />
     <meta property="og:url" content={fullUrl} />
-    <meta property="og:title" content={`${post.title} | Veronika Flores Blog`} />
+    <meta property="og:title" content={`${post.title} | Idi Ooko Blog`} />
     <meta property="og:description" content={post.excerpt} />
     <meta property="og:image" content={defaultImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Veronika Flores at Google Office" />
-    <meta property="og:site_name" content="Veronika Flores Portfolio" />
+    <meta property="og:image:alt" content="Idi Ooko at Google Office" />
+    <meta property="og:site_name" content="Idi Ooko Portfolio" />
     <meta property="og:locale" content="en_US" />
     <meta property="article:published_time" content={`${post.date}T00:00:00Z`} />
-    <meta property="article:author" content="Veronika Flores" />
+    <meta property="article:author" content="Idi Ooko" />
     <meta property="article:section" content={post.category} />
     <meta property="article:tag" content={post.category} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={fullUrl} />
-    <meta property="twitter:title" content={`${post.title} | Veronika Flores Blog`} />
+    <meta property="twitter:title" content={`${post.title} | Idi Ooko Blog`} />
     <meta property="twitter:description" content={post.excerpt} />
     <meta property="twitter:image" content={defaultImage} />
-    <meta property="twitter:image:alt" content="Veronika Flores at Google Office" />
+    <meta property="twitter:image:alt" content="Idi Ooko at Google Office" />
     <meta property="twitter:creator" content="@deveronikkahri" />
 
     <!-- LinkedIn -->
-    <meta property="article:author" content="Veronika Flores" />
-    <meta property="article:publisher" content="https://www.linkedin.com/in/veronika-flores-8b469136b/" />
+    <meta property="article:author" content="Idi Ooko" />
+    <meta property="article:publisher" content="https://www.linkedin.com/in/imooko/" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href={fullUrl} />
@@ -76,20 +84,19 @@ const defaultImage = "https://veronikadev.netlify.app/png/me_posing_front_google
         "image": defaultImage,
         "author": {
           "@type": "Person",
-          "name": "Veronika Flores",
-          "url": "https://veronikadev.netlify.app/",
+          "name": "Idi Ooko",
+          "url": "https://ididev.netlify.app/",
           "sameAs": [
-            "https://github.com/VeronikkAhri",
-            "https://www.linkedin.com/in/veronika-flores-8b469136b/",
-            "https://www.tiktok.com/@deveronikkahri"
+            "https://github.com/N3onKashimo",
+            "https://www.linkedin.com/in/imooko/",
           ]
         },
         "publisher": {
           "@type": "Person",
-          "name": "Veronika Flores",
+          "name": "Idi Ooko",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://veronikadev.netlify.app/favicon.svg"
+            "url": "https://ididev.netlify.app/favicon.svg"
           }
         },
         "datePublished": `${post.date}T00:00:00Z`,
@@ -109,7 +116,7 @@ const defaultImage = "https://veronikadev.netlify.app/png/me_posing_front_google
       rel="stylesheet"
     />
 
-    <title>{post.title} • Veronika Flores</title>
+    <title>{post.title} • Idi Ooko</title>
 
     <style>
       :root {
@@ -373,7 +380,7 @@ const defaultImage = "https://veronikadev.netlify.app/png/me_posing_front_google
     <!-- Navigation -->
     <nav class="nav">
       <div class="nav-container">
-        <a href="/" class="nav-logo">veronika.dev</a>
+        <a href="/" class="nav-logo">idi.dev</a>
         <ul class="nav-links">
           <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/#about" class="nav-link">About</a></li>
@@ -410,7 +417,7 @@ const defaultImage = "https://veronikadev.netlify.app/png/me_posing_front_google
 
     <!-- Footer -->
     <footer class="footer">
-      <p>&copy; {currentYear} Veronika Flores. Crafted with passion using Astro.</p>
+      <p>&copy; {currentYear} Idi Ooko. Crafted with passion using Astro.</p>
     </footer>
 
     <script>
