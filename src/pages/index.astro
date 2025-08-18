@@ -1241,6 +1241,54 @@ const currentYear = new Date().getFullYear();
       html {
         scroll-padding-top: 80px;
       }
+      /* === ABOUT: mobile fixes (drop-in overrides) === */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: var(--spacing-lg);
+        align-items: start;
+      }
+
+      /* Make the image fluid by default */
+      .about-image {
+        width: 100%;
+        height: auto;               /* stop forcing 400/300/250px heights */
+        object-fit: cover;
+        border-radius: var(--border-radius);
+      }
+
+      /* Better paragraph wrapping to avoid side scroll */
+      .about-content p {
+        overflow-wrap: anywhere;
+        hyphens: auto;
+        line-height: 1.7;
+      }
+
+      /* Tablet & down: stack columns, center image, fix stats */
+      @media (max-width: 768px) {
+        .about-grid {
+          grid-template-columns: 1fr;   /* stack */
+          gap: var(--spacing-md);
+          text-align: center;
+        }
+        .about-image {
+          width: min(100%, 280px);
+          margin: 0 auto;
+        }
+        .about-stats {
+          grid-template-columns: repeat(2, 1fr);
+          max-width: 400px;
+          margin: var(--spacing-md) auto 0;
+        }
+      }
+
+      /* Small phones: single-column stats */
+      @media (max-width: 420px) {
+        .about-stats {
+          grid-template-columns: 1fr;
+          max-width: 260px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1308,8 +1356,6 @@ const currentYear = new Date().getFullYear();
           alt="Idi Ooko at Google Office"
           class="about-image"
           loading="lazy"
-          width="400"
-          height="400"
         />
         <div class="about-content">
           <h3>Building the Future of Digital Experiences</h3>
