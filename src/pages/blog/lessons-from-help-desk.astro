@@ -1,12 +1,12 @@
 ---
 const currentYear = new Date().getFullYear();
 const post = {
-  title: "My Journey from Mexico to Google",
-  date: "2024-12-05",
-  readTime: "6 min read",
-  category: "Personal",
+  title: "Lessons from the Help Desk – Supporting Faculty & Students at Wharton",
+  date: "2019-11-28",
+  readTime: "3 min read",
+  category: "Career",
   excerpt:
-    "The challenges, learnings, and experiences that shaped my path in tech.",
+    "Reflections on my work-study role at Wharton’s IT Help Desk: ticket hygiene, security posture, and troubleshooting with empathy.",
 };
 ---
 
@@ -27,7 +27,7 @@ const post = {
       rel="stylesheet"
     />
 
-    <title>{post.title} • Veronika Flores</title>
+    <title>{post.title} • idi.dev</title>
 
     <style>
       :root {
@@ -159,22 +159,6 @@ const post = {
         font-family: var(--font-mono);
       }
 
-      .article-image {
-        width: 100%;
-        max-width: 600px;
-        height: 300px;
-        object-fit: cover;
-        border-radius: var(--border-radius);
-        margin: var(--spacing-lg) auto;
-        display: block;
-        filter: grayscale(100%);
-        transition: var(--transition);
-      }
-
-      .article-image:hover {
-        filter: grayscale(0%);
-      }
-
       .article-content {
         line-height: 1.8;
         font-size: 1.125rem;
@@ -248,7 +232,7 @@ const post = {
     <!-- Navigation -->
     <nav class="nav">
       <div class="nav-container">
-        <a href="/" class="nav-logo">veronika.dev</a>
+        <a href="/" class="nav-logo">idi.dev</a>
         <ul class="nav-links">
           <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/blog" class="nav-link">Blog</a></li>
@@ -278,163 +262,69 @@ const post = {
           <span>{post.readTime}</span>
         </div>
       </header>
+<div class="article-content">
+  <p>
+    During my time as a work-study student at Wharton’s IT Help Desk, I quickly
+    learned that technology support wasn’t just about fixing broken printers or
+    resetting passwords. It was about managing people, expectations, and
+    security — all while keeping operations running smoothly for faculty,
+    students, and staff.
+  </p>
 
-      <img
-        src="/png/me_selfieportrait_in_office_with_golang_shirt.png"
-        alt="Veronika in Google office"
-        class="article-image"
-      />
+  <h2>Ticket Hygiene</h2>
 
-      <div class="article-content">
-        <p>
-          A los 20 años, viviendo en México, nunca imaginé que tres años después
-          estaría trabajando en las oficinas de Google en California. Esta es la
-          historia de cómo una joven apasionada por el anime, los videojuegos y
-          la tecnología logró cumplir uno de sus sueños más grandes.
-        </p>
+  <p>
+    Every incoming request was a small story: someone locked out of a system,
+    lecture hall AV failing minutes before class, or a research project that
+    couldn’t afford downtime. Good ticket hygiene — clear notes, tagging,
+    prioritization — was essential. I learned to write tickets as if the next
+    person picking them up had no context, which kept the queue efficient and
+    reduced repeated troubleshooting.
+  </p>
 
-        <h2>Los Primeros Pasos en México</h2>
+  <blockquote>
+    “A clean ticket saves the next technician twice the time.”
+  </blockquote>
 
-        <p>
-          Todo comenzó con mi fascinación por la experiencia del usuario.
-          Mientras mis amigos jugaban videojuegos, yo analizaba por qué ciertos
-          interfaces me hacían sentir más conectada con el juego. ¿Por qué
-          algunos sitios web me hacían querer explorar más, mientras otros me
-          frustraban?
-        </p>
+  <h2>Security Posture</h2>
 
-        <p>
-          En México, empecé autodidacta aprendiendo Figma, CSS, y los
-          fundamentos del diseño UX/UI. Mi estética kawaii no era vista como
-          algo profesional en ese momento, pero yo sabía que la personalidad en
-          el diseño podía ser un diferenciador, no una limitación.
-        </p>
+  <p>
+    Working inside an academic institution meant security was always part of the
+    conversation. Phishing attempts targeting faculty, forgotten laptop
+    encryption, or password resets weren’t just annoyances — they were potential
+    risks to sensitive research and student data. Even small interventions, like
+    encouraging multi-factor authentication or explaining why updates mattered,
+    made a noticeable difference in strengthening overall posture.
+  </p>
 
-        <h3>El Salto a la Programación</h3>
+  <h2>Troubleshooting with Empathy</h2>
 
-        <p>
-          Decidí que no solo quería diseñar interfaces; quería construirlas.
-          Aprendí Angular porque me gustó su estructura y filosofía. Después, Go
-          se convirtió en mi lenguaje favorito por su simplicidad y performance.
-          La combinación de diseño y desarrollo me dio una perspectiva única.
-        </p>
+  <p>
+    The most valuable skill I picked up wasn’t technical — it was empathy.
+    Faculty preparing for class didn’t care about driver updates or network
+    logs. Students stressed over deadlines weren’t interested in packet loss
+    analysis. They just wanted reassurance and a solution. Learning to listen,
+    calm nerves, and then solve the issue built trust and often turned tense
+    situations into grateful conversations.
+  </p>
 
-        <blockquote>
-          "No basta con que las interfaces se vean bien; deben funcionar
-          perfectamente y ser técnicamente sólidas."
-        </blockquote>
+  <h2>Lessons Learned</h2>
 
-        <h2>La Transición a DevOps</h2>
-
-        <p>
-          Trabajando en proyectos freelance, me di cuenta de que la experiencia
-          del usuario no termina en el frontend. La velocidad de carga, la
-          disponibilidad, la escalabilidad - todo eso impacta directamente cómo
-          los usuarios perciben un producto.
-        </p>
-
-        <p>
-          Aprendí Kubernetes, Docker, y cloud infrastructure no porque fuera
-          requerido, sino porque entendí que un UX Engineer completo debe
-          comprender todo el stack. Esta visión holística fue lo que
-          eventualmente llamó la atención de Google.
-        </p>
-
-        <h2>El Proceso de Aplicación a Google</h2>
-
-        <p>
-          El proceso fue intenso. Seis rondas de entrevistas cubriendo design
-          thinking, coding challenges en Go y TypeScript, system design, y
-          cultural fit. Lo que más me ayudó fue demostrar cómo mi background
-          multicultural y mi perspectiva única podrían aportar valor al equipo.
-        </p>
-
-        <p>
-          Durante las entrevistas, no escondí mi personalidad kawaii. Al
-          contrario, expliqué cómo esa sensibilidad estética me ayuda a crear
-          productos más humanizados y accesibles. Google valoró esa
-          autenticidad.
-        </p>
-
-        <h2>La Vida en California</h2>
-
-        <p>
-          Mudarme de México a California fue overwhelming al principio. Nuevo
-          país, nuevo idioma profesional, nuevas dinámicas de trabajo. Pero la
-          diversidad en Google me hizo sentir en casa rápidamente.
-        </p>
-
-        <p>
-          Trabajar en productos que impactan a millones de usuarios diariamente
-          me ha enseñado la importancia de cada decisión de diseño. Un cambio de
-          2px en el spacing puede mejorar la conversión en 0.1%, lo que
-          representa miles de usuarios beneficiados.
-        </p>
-
-        <h3>Mantener Mis Raíces</h3>
-
-        <p>
-          Algo que aprendí es que la success no requiere cambiar quien eres.
-          Sigo viendo anime los fines de semana, sigo amando los videojuegos, y
-          sigo creando interfaces con esa sensibilidad estética que me
-          caracteriza.
-        </p>
-
-        <p>
-          Mi herencia mexicana me da una perspectiva diferente sobre
-          accessibility y inclusión. Entiendo qué significa diseñar para
-          usuarios con diferentes contexts tecnológicos y culturales.
-        </p>
-
-        <h2>Consejos para Futuros Dreamers</h2>
-
-        <p>
-          <strong>1. Tu personalidad es tu fortaleza:</strong> No escondas lo que
-          te hace único. En tech, la diversidad de pensamiento es invaluable.
-        </p>
-
-        <p>
-          <strong>2. Aprende más allá de tu especialidad:</strong> Ser T-shaped professional
-          te abre más puertas que ser solo un expert en una cosa.
-        </p>
-
-        <p>
-          <strong>3. Construye proyectos que importan:</strong> GitHub stars son
-          cool, pero proyectos que resuelven problemas reales demuestran impact.
-        </p>
-
-        <p>
-          <strong>4. Network authentically:</strong> Las mejores oportunidades vienen
-          de connections genuinas, no de networking forzado.
-        </p>
-
-        <h2>Looking Forward</h2>
-
-        <p>
-          Hoy, a los 23 años, estoy exactamente donde quería estar, pero el
-          journey no para. Quiero seguir bridging la brecha entre design y
-          development, crear productos más inclusivos, y eventually, mentorear a
-          otras jóvenes latinas que sueñan con trabajar en tech.
-        </p>
-
-        <p>
-          Cada día en Google es un recordatorio de que los sueños grandes
-          requieren trabajo duro, pero cuando combinas pasión genuina con skills
-          técnicos sólidos, las posibilidades son infinitas.
-        </p>
-
-        <p>
-          Si estás leyendo esto desde México, América Latina, o cualquier lugar
-          del mundo, pensando que tus sueños son demasiado grandes: no lo son.
-          Tu perspectiva única es exactamente lo que el mundo tech necesita.
-        </p>
-      </div>
+  <p>
+    Supporting a diverse academic community taught me that IT is both technical
+    and human. Strong documentation, proactive security, and empathetic
+    troubleshooting aren’t just help desk skills — they’re professional habits
+    that scale to any tech role. The experience showed me how small, everyday
+    practices keep a large institution running without anyone noticing — which,
+    in a way, is the ultimate success of IT support.
+  </p>
+</div>
     </article>
 
     <!-- Footer -->
     <footer class="footer">
       <p>
-        &copy; {currentYear} Veronika Flores. Crafted with passion using Astro.
+        &copy; {currentYear} Idi Ooko. Crafted with passion using Astro.
       </p>
     </footer>
   </body>

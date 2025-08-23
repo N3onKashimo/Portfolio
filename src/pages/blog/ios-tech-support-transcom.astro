@@ -1,12 +1,12 @@
 ---
 const currentYear = new Date().getFullYear();
 const post = {
-  title: "Building Scalable Angular Applications",
-  date: "2024-12-10",
-  readTime: "8 min read",
-  category: "Development",
+  title: "Life as an iOS Tier 2 Tech at Transcom (Why I Wouldn’t Start Here)",
+  date: "2021-02-10",
+  readTime: "3 min read",
+  category: "Personal",
   excerpt:
-    "Best practices for creating Angular applications that grow with your team and user base.",
+    "Insights and experiences from working as a Tier 2 Tech at Transcom, and why it may not be the best starting point for your career.",
 };
 ---
 
@@ -27,7 +27,7 @@ const post = {
       rel="stylesheet"
     />
 
-    <title>{post.title} • Veronika Flores</title>
+    <title>{post.title} • Idi Ooko</title>
 
     <style>
       :root {
@@ -282,174 +282,116 @@ const post = {
           <span>{post.readTime}</span>
         </div>
       </header>
+<div class="article-content">
+  <p>
+    When people hear “iOS Tier 2 support,” it sounds like a solid IT role. The
+    truth? I worked for Transcom — a contractor that supported Apple customers
+    without actually being Apple. It was close enough to the brand to catch all
+    the heat from angry customers, but too far removed to offer any real growth
+    in IT.
+  </p>
 
-      <div class="article-content">
-        <p>
-          En Google, trabajamos con Angular applications que deben servir a
-          millones de usuarios diariamente. La escalabilidad no es solo una
-          característica nice-to-have, es una necesidad crítica. Después de 3+
-          años desarrollando y optimizando aplicaciones Angular enterprise, he
-          identificado los patrones clave para construir aplicaciones
-          verdaderamente escalables.
-        </p>
+  <p>
+    At first, I thought it would be a great way to break into tech. Spoiler: it
+    wasn’t. Here’s what the job looked like, what I learned, and why I wouldn’t
+    recommend it as the first step into an IT career.
+  </p>
 
-        <h2>Arquitectura Modular desde el Inicio</h2>
+  <h2>What Tier 2 Really Looked Like</h2>
 
-        <p>
-          El error más común que veo en equipos de desarrollo es construir una
-          aplicación monolítica y esperar poder modularizarla después. La
-          arquitectura modular debe ser una decisión desde el día uno.
-        </p>
+  <p>
+    Tier 1 handled the basics: password resets, Wi-Fi issues, and simple “turn
+    it off and on again” fixes. By the time a case reached Tier 2, it was the
+    messy stuff: endless restore loops, failed updates, tangled Apple IDs, and
+    security verification nightmares.
+  </p>
 
-        <h3>Feature Modules</h3>
+  <p>
+    My toolkit? A headset, strict troubleshooting scripts, and a call timer that
+    never stopped ticking. It was less about problem solving and more about
+    following flowcharts under pressure.
+  </p>
 
-        <p>
-          Cada funcionalidad debe vivir en su propio módulo con
-          responsabilidades claramente definidas. Esto no solo mejora la
-          organización del código, sino que habilita lazy loading y reduce el
-          bundle size inicial.
-        </p>
-        <pre><code>// feature.module.ts
-@NgModule(&#123;
-  declarations: [FeatureComponent],
-  imports: [
-    CommonModule,
-    FeatureRoutingModule,
-    SharedModule
-  ],
-  providers: [FeatureService]
-&#125;)
-export class FeatureModule &#123; &#125;</code></pre>
+  <h2>The Gripes</h2>
 
-        <h3>Shared Modules Inteligentes</h3>
+  <p>
+    Working at Transcom came with plenty of frustrations:
+  </p>
 
-        <p>
-          Los shared modules deben contener componentes, directivas y pipes que
-          se reutilizan a través de la aplicación. Pero cuidado: un shared
-          module que crece demasiado puede convertirse en un anti-pattern.
-        </p>
+  <ul>
+    <li>
+      <strong>No real IT exposure:</strong> You weren’t working with systems,
+      servers, or networks — just reading scripts.
+    </li>
+    <li>
+      <strong>High pressure, low pay:</strong> Customers expected Apple-level
+      support, but contractor pay didn’t match the workload.
+    </li>
+    <li>
+      <strong>Limited growth:</strong> You weren’t technically an Apple
+      employee, so the brand name didn’t transfer well to a résumé.
+    </li>
+    <li>
+      <strong>Burnout potential:</strong> High call volumes, repetitive issues,
+      and little control over scheduling.
+    </li>
+  </ul>
 
-        <h2>State Management con NgRx</h2>
+  <blockquote>
+    “If you’re looking at jobs like this as your entry into IT, think twice.
+    It looks like tech — but it’s really just call center work.”
+  </blockquote>
 
-        <p>
-          Para aplicaciones complejas, un state management robusto es crucial.
-          NgRx no es overhead; es inversión en maintainability.
-        </p>
+  <h2>What I Actually Learned</h2>
 
-        <blockquote>
-          "La complejidad del state management escala exponencialmente con el
-          tamaño de la aplicación. NgRx convierte esta curva exponencial en una
-          línea recta."
-        </blockquote>
+  <p>
+    To be fair, it wasn’t a total loss. I walked away with patience for panicked
+    customers, discipline under pressure, and a respect for strict security
+    policies. Apple’s rules were firm — no matter how much begging, locked
+    devices stayed locked. Sticking to that line taught me backbone.
+  </p>
 
-        <h3>Implementación Práctica</h3>
-        <pre><code>// user.effects.ts
-@Injectable()
-export class UserEffects &#123;
-  loadUsers$ = createEffect(() =&gt;
-    this.actions$.pipe(
-      ofType(UserActions.loadUsers),
-      switchMap(() =&gt;
-        this.userService.getUsers().pipe(
-          map(users =&gt; UserActions.loadUsersSuccess(&#123; users &#125;)),
-          catchError(error =&gt; of(UserActions.loadUsersFailure(&#123; error &#125;)))
-        )
-      )
-    )
-  );
-&#125;</code></pre>
+  <h2>A Warning to Beginners</h2>
 
-        <h2>Performance Optimization Strategies</h2>
+  <p>
+    If you’re trying to break into IT, avoid outsourced call center work like
+    this. It feels technical, but it won’t move your career forward. You’ll
+    spend your energy stuck on phones instead of building real skills.
+  </p>
 
-        <p>
-          <strong>OnPush Change Detection:</strong> Usar OnPush change detection
-          strategy en componentes que manejan data inmutable puede mejorar el performance
-          significativamente.
-        </p>
+  <p>Better ways to start:</p>
 
-        <p>
-          <strong>Lazy Loading + Preloading:</strong> Combinar lazy loading con preloading
-          strategies permite cargar solo lo necesario inicialmente, mientras se precargan
-          módulos probables de usar.
-        </p>
+  <ol>
+    <li>
+      Get a help desk job <em>inside</em> a company where you can touch systems
+      and shadow sysadmins.
+    </li>
+    <li>
+      Volunteer to help with school, library, or community IT projects. Hands-on
+      beats scripted support every time.
+    </li>
+    <li>
+      Start your own home lab: Linux boxes, cloud labs, or even hosting a
+      Minecraft server. You’ll learn more troubleshooting your own projects than
+      you will reading scripts on a headset.
+    </li>
+  </ol>
 
-        <p>
-          <strong>Virtual Scrolling:</strong> Para listas grandes, virtual scrolling
-          es esencial. Angular CDK provee excelentes herramientas para esto.
-        </p>
+  <h2>Takeaway</h2>
 
-        <h2>Testing Strategy</h2>
-
-        <p>
-          Una aplicación escalable requiere una testing strategy robusta. Uso
-          una pirámide de testing que prioriza unit tests, complementados con
-          integration tests y algunos e2e tests críticos.
-        </p>
-
-        <h3>Component Testing Best Practices</h3>
-        <pre><code>// component.spec.ts
-describe('UserComponent', () =&gt; &#123;
-  let component: UserComponent;
-  let fixture: ComponentFixture&lt;UserComponent&gt;;
-  let mockUserService: jasmine.SpyObj&lt;UserService&gt;;
-
-  beforeEach(() =&gt; &#123;
-    const spy = jasmine.createSpyObj('UserService', ['getUsers']);
-    
-    TestBed.configureTestingModule(&#123;
-      declarations: [UserComponent],
-      providers: [&#123; provide: UserService, useValue: spy &#125;]
-    &#125;);
-    
-    mockUserService = TestBed.inject(UserService) as jasmine.SpyObj&lt;UserService&gt;;
-  &#125;);
-&#125;);</code></pre>
-
-        <h2>DevOps Integration</h2>
-
-        <p>
-          Como DevOps Engineer, entiendo que el código debe ser deployable desde
-          el primer commit. Configurar CI/CD pipelines que incluyan testing,
-          linting, y automated deployments es crucial para escalabilidad.
-        </p>
-
-        <p>
-          <strong>Docker Containers:</strong> Containerizar la aplicación Angular
-          garantiza consistency entre environments.
-        </p>
-
-        <p>
-          <strong>Environment Configuration:</strong> Usar Angular environments correctamente
-          permite la misma codebase en multiple environments sin modificaciones.
-        </p>
-
-        <h2>Monitoreo y Observabilidad</h2>
-
-        <p>
-          Una aplicación escalable necesita telemetría. Implementar error
-          tracking, performance monitoring y user analytics desde el inicio
-          permite tomar decisiones basadas en data real.
-        </p>
-
-        <p>
-          En Google, usamos métricas como Core Web Vitals y custom performance
-          markers para asegurar que la experiencia del usuario se mantenga
-          óptima mientras la aplicación crece.
-        </p>
-
-        <p>
-          La escalabilidad en Angular no es un accidente; es el resultado de
-          decisiones arquitecturales deliberadas y consistent implementation de
-          best practices. Cada línea de código debe escribirse pensando en el
-          futuro de la aplicación.
-        </p>
-      </div>
-    </article>
+  <p>
+    Working Tier 2 iOS support at Transcom wasn’t the IT career starter I
+    expected. It gave me discipline, empathy, and customer skills, but it wasn’t
+    the right direction for building a technical foundation. If you want to grow
+    in IT, aim for roles that let you experiment, break things, and actually
+    learn systems — not just survive phone calls.
+  </p>
+</div>
 
     <!-- Footer -->
     <footer class="footer">
       <p>
-        &copy; {currentYear} Veronika Flores. Crafted with passion using Astro.
+        &copy; {currentYear} Idi Ooko. Crafted with passion using Astro.
       </p>
     </footer>
   </body>
