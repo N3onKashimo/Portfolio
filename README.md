@@ -1,6 +1,6 @@
 # Idi Ooko - Portfolio & Blog  
 
-A minimalist portfolio and blog built with Astro, TypeScript, and modern CSS. Showcasing the work, projects, and growth journey of **Idi Ooko** — a UI/UX Designer, IT Specialist, and DevOps Engineer in progress.  
+A minimalist portfolio and blog built with Astro, TypeScript, and modern CSS. Showcasing the work, projects, and growth journey of **Idi Ooko** — a UI/UX Designer, IT Consultant, and DevOps Engineer in progress.  
 
 ## ✨ Features  
 
@@ -66,7 +66,7 @@ This portfolio reflects my **builder mindset** and approach to growth:
 
 ## 🌟 About Idi  
 
-**Idi Ooko** is an IT professional bridging **UI/UX design, IT support, and DevOps engineering**.  
+**Idi Ooko** is an Continuous Improvement Technician bridging **UI/UX design, IT support, and DevOps engineering**.  
 
 - **IT & Support**: Google IT Support Certified, Tier 2 experience with Apple devices, help desk support for higher education  
 - **UI/UX & Tools**: Designed internal lab tools at Daikin, focusing on ISO 17025 compliance, usability, and efficiency  
@@ -76,7 +76,7 @@ This portfolio reflects my **builder mindset** and approach to growth:
 
 ## 📂 Featured Projects  
 
-### 🧠 Rogue AI Dashboard (DevOps Automation Lab)  
+### 🧠 Second Brain AI Dashboard (DevOps Automation Lab)  
 - Built a self-hosted “second brain” using Docker, GitHub Actions, and Terraform.  
 - Automated workflows for task tracking, observability, and deployment pipelines.  
 - Demonstrates **CI/CD**, **infrastructure-as-code**, and containerization.  
