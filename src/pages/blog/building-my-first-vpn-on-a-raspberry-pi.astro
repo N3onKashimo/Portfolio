@@ -1,0 +1,375 @@
+---
+const currentYear = new Date().getFullYear();
+const post = {
+  title: "Building My First VPN on a Raspberry Pi",
+  date: "2019-11-20",
+  readTime: "3 min read",
+  category: "DevOps",
+  excerpt:
+    "Creating consistent and scalable design systems that bridge design and development.",
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={post.excerpt} />
+
+    <!-- Ultra-modern typography from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{post.title} • Idi Ooko</title>
+
+    <style>
+      :root {
+        --color-primary: #000000;
+        --color-secondary: #404040;
+        --color-tertiary: #808080;
+        --color-accent: #f5f5f5;
+        --color-background: #ffffff;
+        --color-surface: #fafafa;
+        --font-primary: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: "JetBrains Mono", "Courier New", monospace;
+        --spacing-xs: 0.5rem;
+        --spacing-sm: 1rem;
+        --spacing-md: 2rem;
+        --spacing-lg: 4rem;
+        --spacing-xl: 6rem;
+        --border-radius: 2px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: var(--font-primary);
+        font-size: 16px;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--color-background);
+        color: var(--color-primary);
+        font-weight: 400;
+      }
+
+      /* Navigation */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: var(--spacing-sm) var(--spacing-md);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        z-index: 1000;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        font-family: var(--font-mono);
+        font-weight: 500;
+        font-size: 1.125rem;
+        color: var(--color-primary);
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: var(--spacing-md);
+        list-style: none;
+      }
+
+      .nav-link {
+        color: var(--color-secondary);
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        transition: var(--transition);
+        text-transform: uppercase;
+      }
+
+      .nav-link:hover {
+        color: var(--color-primary);
+      }
+
+      /* Article Layout */
+      .article {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: calc(80px + var(--spacing-xl)) var(--spacing-md)
+          var(--spacing-xl);
+      }
+
+      .article-header {
+        text-align: center;
+        margin-bottom: var(--spacing-lg);
+      }
+
+      .article-category {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: var(--color-surface);
+        border-radius: var(--border-radius);
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--color-tertiary);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .article-title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 300;
+        letter-spacing: -0.02em;
+        margin-bottom: var(--spacing-sm);
+        line-height: 1.1;
+      }
+
+      .article-meta {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-md);
+        font-size: 0.875rem;
+        color: var(--color-tertiary);
+        font-family: var(--font-mono);
+      }
+
+      .article-content {
+        line-height: 1.8;
+        font-size: 1.125rem;
+      }
+
+      .article-content h2 {
+        font-size: 1.75rem;
+        font-weight: 500;
+        margin: var(--spacing-lg) 0 var(--spacing-md);
+        color: var(--color-primary);
+      }
+
+      .article-content h3 {
+        font-size: 1.375rem;
+        font-weight: 500;
+        margin: var(--spacing-md) 0 var(--spacing-sm);
+        color: var(--color-primary);
+      }
+
+      .article-content p {
+        margin-bottom: var(--spacing-md);
+        color: var(--color-secondary);
+      }
+
+      .article-content blockquote {
+        border-left: 3px solid var(--color-primary);
+        padding-left: var(--spacing-md);
+        margin: var(--spacing-md) 0;
+        font-style: italic;
+        color: var(--color-tertiary);
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        color: var(--color-secondary);
+        text-decoration: none;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-lg);
+        transition: var(--transition);
+      }
+
+      .back-link:hover {
+        color: var(--color-primary);
+      }
+
+      /* Footer */
+      .footer {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding: var(--spacing-md);
+        text-align: center;
+        color: var(--color-tertiary);
+        font-size: 0.875rem;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .article-meta {
+          flex-direction: column;
+          gap: var(--spacing-xs);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">veronika.dev</a>
+        <ul class="nav-links">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/blog" class="nav-link">Blog</a></li>
+          <li><a href="/#about" class="nav-link">About</a></li>
+          <li><a href="/#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article">
+      <a href="/blog" class="back-link"> ← Back to Blog </a>
+
+      <header class="article-header">
+        <span class="article-category">{post.category}</span>
+        <h1 class="article-title">{post.title}</h1>
+        <div class="article-meta">
+          <span
+            >{
+              new Date(post.date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+            }</span
+          >
+          <span>{post.readTime}</span>
+        </div>
+      </header>
+
+      <div class="article-content">
+  <p>
+    I picked up a Raspberry Pi mostly out of curiosity. Everyone online made it
+    sound like the perfect little toy for nerds who want to break stuff and
+    learn. I didn’t really need a VPN, but the idea of tunneling into my home
+    network from anywhere sounded too cool not to try.
+  </p>
+
+  <p>
+    It turned out to be equal parts magic, frustration, and late-night Googling
+    of error messages at 2 AM.
+  </p>
+
+  <h2>Setting Up the Pi</h2>
+
+  <p>
+    First step was simple: install Raspberry Pi OS, plug everything in, and run
+    system updates. To my surprise, that actually worked without issues. A small
+    win before things got messy.
+  </p>
+
+  <h2>Installing the VPN</h2>
+
+  <p>
+    Everyone on Reddit swore by PiVPN as the easy button, so I gave it a shot.
+    The script asked me to pick between OpenVPN and WireGuard. At first I had no
+    clue, but after some quick reading:
+  </p>
+
+  <p>
+    <strong>OpenVPN:</strong> older, reliable, but heavy.  
+    <br />
+    <strong>WireGuard:</strong> newer, faster, and way simpler.
+  </p>
+
+  <p>
+    I went with WireGuard — because “less headache” sounded good.
+  </p>
+
+  <h2>Router Hell</h2>
+
+  <p>
+    This is where everything broke. I had to configure port forwarding so the
+    VPN would actually let me connect from outside. At first, nothing worked.
+    My phone refused to connect and I thought I bricked the Pi.
+  </p>
+
+  <blockquote>
+    The fix: WireGuard defaults to port 51820. I had typed in some random number
+    instead.
+  </blockquote>
+
+  <h2>Adding Clients</h2>
+
+  <p>
+    Once the server was alive, adding devices was surprisingly smooth. PiVPN
+    generated a QR code, I scanned it with my phone, and it immediately showed
+    “connected.” It wasn’t fully working yet, but it felt like progress.
+  </p>
+
+  <h2>Debugging Everything</h2>
+
+  <p>
+    DNS leaks, routing issues, dropped connections — I ran into all of them.
+    My fix-it loop was basically restarting the Pi, running
+    <code>systemctl status wg-quick@wg0</code>, and staring at logs until
+    something made sense.
+  </p>
+
+  <p>
+    Eventually I realized my firewall rules were wrong. After correcting them,
+    the VPN finally worked. I even tested it from Starbucks — and watching my
+    phone tunnel into my home IP felt like straight-up hacker vibes.
+  </p>
+
+  <h2>What I Learned</h2>
+
+  <p>
+    <strong>1. Networking is trial and error:</strong> half the learning comes
+    from breaking things.  
+  </p>
+
+  <p>
+    <strong>2. Port forwarding will test you:</strong> one wrong number and
+    nothing works.  
+  </p>
+
+  <p>
+    <strong>3. StackOverflow and Pi forums are lifesavers:</strong> most of my
+    fixes came from late-night forum hunts.
+  </p>
+
+  <h2>Next Time</h2>
+
+  <p>
+    With the VPN running, I want to start tunneling into my self-hosted apps
+    like Plex and Nextcloud. For now, I’m just proud I didn’t completely brick
+    the Pi. That’s the fun of it — breaking, fixing, and learning along the way.
+  </p>
+</div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        &copy; {currentYear} Idi Ooko. Crafted with passion using Astro.
+      </p>
+    </footer>
+  </body>
+</html>

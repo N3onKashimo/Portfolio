@@ -5,143 +5,142 @@ const currentYear = new Date().getFullYear();
 const blogPosts = [
   {
     id: 5,
-    title: "Building Go APIs That Don't Suck: A Designer's Guide",
+    title: "Roadmap to Google STEP: My Practice Plan",
     excerpt:
-      "Lessons learned from designing and building Go APIs at Google that prioritize developer experience and human usability.",
-    date: "2024-12-14",
-    readTime: "7 min read",
-    category: "Golang",
-    slug: "golang-apis-that-dont-suck",
+      "My current roadmap to the Google STEP internship.",
+    date: "2025-8-21",
+    readTime: "5 min read",
+    category: "Career",
+    slug: "roadmap-to-google-step",
   },
   {
     id: 6,
-    title: "Golang Microservices at Scale",
+    title: "Why I Chose a BS in IT for Financial Freedom and Remote Independence",
     excerpt:
-      "How Go's simplicity becomes a superpower when building distributed systems that actually work in production.",
-    date: "2024-12-10",
-    readTime: "6 min read",
-    category: "Development",
-    slug: "golang-microservices-at-scale",
+      "How I’m using WGU’s BSIT program, certifications, and self-hosted projects to build financial freedom and a sustainable tech career.",
+    date: "2025-09-06",
+    readTime: "4 min read",
+    category: "Career",
+    slug: "bsit-financial-freedom-remote-independence",
   },
   {
     id: 8,
-    title: "UX Research Without the Fancy Tools",
+    title: "Why I’m Building My Own AI Second Brain",
     excerpt:
       "Sometimes the best insights come from simple conversations and keen observation, not expensive research platforms.",
-    date: "2024-12-08",
+    date: "2025-6-5",
     readTime: "4 min read",
-    category: "UX Design",
-    slug: "ux-research-without-fancy-tools",
+    category: "Development",
+    slug: "why-im-building-my-own-ai-second-brain",
   },
   {
     id: 9,
-    title: "DevOps for Humans: Making CI/CD Less Scary",
+    title: "Creating Internal Lab Websites to Support Engineering Teams",
     excerpt:
-      "CI/CD doesn't have to be intimidating. Here's how to build deployment pipelines that actually help your team ship with confidence.",
-    date: "2024-12-06",
+      "I migrated corrective actions, risk management, and customer complaint logs from scattered docs into an internal lab site. What started with Figma ended up in Excel mockups — not conventional, but it fit the team’s workflow and made compliance tools usable.",
+    date: "2024-02-06",
     readTime: "5 min read",
-    category: "DevOps",
-    slug: "devops-for-humans-making-cicd-less-scary",
+    category: "Career",
+    slug: "internal-lab-websites-engineering",
   },
   {
     id: 10,
-    title: "Design Systems That Don't Suck",
+    title: "Managing Calibration and Vendor Coordination for ISO 17025",
     excerpt:
-      "Building design systems that teams actually want to use, not fight against. Lessons from Google's design system work.",
-    date: "2024-12-04",
-    readTime: "7 min read",
-    category: "Design Systems",
-    slug: "design-systems-that-dont-suck",
+      "How I learned to keep our lab's tools compliant and audits stress-free.",
+    date: "2023-11-04",
+    readTime: "5 min read",
+    category: "Career",
+    slug: "calibration-vendor-coordination-iso-17025",
   },
   {
     id: 11,
-    title: "From Figma to Code: Bridging the Gap",
+    title: "Running a Free Minecraft Server on Oracle Cloud",
     excerpt:
-      "How to create designs that developers love to implement and users love to use. Practical tips from someone who lives in both worlds.",
-    date: "2024-12-02",
-    readTime: "5 min read",
-    category: "UX Design",
-    slug: "from-figma-to-code-bridging-the-gap",
+      "How I turned free Oracle credits into a 24/7 Minecraft server. ",
+    date: "2021-11-05",
+    readTime: "4 min read",
+    category: "Personal",
+    slug: "oracle-minecraft-server",
   },
   {
     id: 12,
-    title: "Learning Go: A UX Designer's Perspective",
+     title: "From Wii Mods to Android Rooting: Making Do with What I Had",
     excerpt:
-      "What happens when a UX designer falls in love with Go? Lessons learned from crossing the design-development divide.",
-    date: "2024-11-30",
-    readTime: "6 min read",
-    category: "Personal",
-    slug: "learning-go-ux-designer-perspective",
+      "How bricking my Wii, modding Brawl, and rooting prepaid Android phones taught me persistence, problem-solving, and the IT mindset.", 
+     date: "2021-08-20",
+     readTime: "6 min read",
+     category: "Personal",
+     slug: "wii-mods-android-rooting",
   },
   {
     id: 7,
-    title: "The Art of Minimal UX Design",
+    title: "Customer Empathy and Surviving the Call Center Grind",
     excerpt:
-      "Exploring how less can be more when creating user interfaces that truly connect with people.",
-    date: "2024-12-15",
+      "After graduating with a theatre degree, I found myself working Tier 2 iOS support at Transcom.",
+    date: "2021-05-15",
     readTime: "5 min read",
-    category: "UX Design",
-    slug: "the-art-of-minimal-ux-design",
+    category: "Career",
+    slug: "customer-empathy-call-center-grind",
   },
   {
     id: 8,
-    title: "Building Scalable Angular Applications",
+    title: "Life as an iOS Tier 2 Tech at Transcom",
     excerpt:
-      "Best practices for creating Angular applications that grow with your team and user base.",
-    date: "2024-12-10",
-    readTime: "8 min read",
-    category: "Development",
-    slug: "building-scalable-angular-applications",
+      "Supporting Apple customers without working for Apple. My time at Transcom showed me what high-level iOS troubleshooting really looks like — and what it doesn’t.",
+    date: "2021-02-10",
+    readTime: "3 min read",
+    category: "Career",
+    slug: "ios-tech-support-transcom",
   },
   {
     id: 9,
-    title: "Monitoring That Doesn't Make You Cry",
+    title: "Balancing Drama Coursework with Early IT Projects",
     excerpt:
-      "How to set up observability that actually helps your team sleep better at night. No complex dashboards required.",
-    date: "2024-12-08",
+      "Struggling theatre rehearsals with side tinkering — from running Plex servers to hosting Minecraft worlds and building my first VPN — all while on a theatre scholarship.",
+    date: "2020-08-24",
     readTime: "4 min read",
-    category: "DevOps",
-    slug: "monitoring-that-doesnt-make-you-cry",
+    category: "Personal",
+    slug: "balancing-drama-and-it-projects",
   },
   {
     id: 10,
-    title: "My Journey from Mexico to Google",
+    title: "Upgrading a Theatre Desktop",
     excerpt:
-      "The challenges, learnings, and experiences that shaped my path in tech.",
-    date: "2024-12-05",
-    readTime: "6 min read",
+      "How a simple GPU upgrade for a projection festival turned into a lesson in systems thinking and IT inside the theatre.",
+    date: "2020-02-04",
+    readTime: "3 min read",
     category: "Personal",
-    slug: "my-journey-from-mexico-to-google",
+    slug: "upgrading-theatre-desktop",
   },
   {
     id: 11,
-    title: "DevOps Culture in Modern Teams",
+    title: "Lessons from the Help Desk – Supporting Faculty & Students",
     excerpt:
-      "How to foster collaboration between development and operations for better products.",
-    date: "2024-11-28",
-    readTime: "7 min read",
-    category: "DevOps",
-    slug: "devops-culture-in-modern-teams",
-  },
-  {
-    id: 11,
-    title: "Design Systems with Figma",
-    excerpt:
-      "Creating consistent and scalable design systems that bridge design and development.",
-    date: "2024-11-20",
-    readTime: "10 min read",
-    category: "Design Systems",
-    slug: "design-systems-with-figma",
+      "Reflections on my work-study role at Wharton.",
+    date: "2019-11-28",
+    readTime: "3 min read",
+    category: "Career",
+    slug: "lessons-from-help-desk",
   },
   {
     id: 12,
-    title: "The Kawaii Aesthetic in Professional Work",
+    title: "Building My First VPN on a Raspberry Pi",
     excerpt:
-      "How bringing personality and fun into professional design can improve user engagement.",
-    date: "2024-11-15",
+      "How I set up my very first VPN on a Raspberry Pi.",
+    date: "2019-11-20",
+    readTime: "3 min read",
+    category: "DevOps",
+    slug: "building-my-first-vpn-on-a-raspberry-pi",
+  },
+  {
+    id: 13,
+    title: "The Stagecraft Aesthetic in IT Work",
+    excerpt: "How theatre training sharpened my problem-solving and communication in tech.",
+    date: "2018-11-15",
     readTime: "4 min read",
-    category: "Design Philosophy",
-    slug: "the-kawaii-aesthetic-in-professional-work",
+    category: "Career",
+    slug: "from-drama-to-it",
   },
 ];
 
@@ -290,7 +289,7 @@ const categories = [...new Set(blogPosts.map((post) => post.category))];
       rel="stylesheet"
     />
 
-    <title>Blog • Veronika Flores</title>
+    <title>Blog • Idi Ooko</title>
     <style>
       :root {
         /* Light mode colors */
@@ -1007,11 +1006,12 @@ const categories = [...new Set(blogPosts.map((post) => post.category))];
     <!-- Navigation -->
     <nav class="nav">
       <div class="nav-container">
-        <a href="/" class="nav-logo">veronika.dev</a>
+        <a href="/" class="nav-logo">N3onKashimo // DevOps Engineer</a>
         <ul class="nav-links">
           <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/blog" class="nav-link active">Blog</a></li>
           <li><a href="/#about" class="nav-link">About</a></li>
+          <li><a href="/resume.pdf" target="_blank" class="nav-link">Resume</a></li>
           <li><a href="/#contact" class="nav-link">Contact</a></li>
           <li>
             <button class="theme-toggle" aria-label="Toggle dark mode">

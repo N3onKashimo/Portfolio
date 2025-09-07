@@ -1,92 +1,113 @@
-# Veronika Flores - Portfolio & Blog
+# Idi Ooko - Portfolio & Blog  
 
-A sophisticated, minimalist portfolio and blog built with Astro, TypeScript, and modern CSS. Showcasing the work and insights of Veronika Flores, UX/UI Engineer & DevOps Specialist at Google California.
+A minimalist portfolio and blog built with Astro, TypeScript, and modern CSS. Showcasing the work, projects, and growth journey of **Idi Ooko** — a UI/UX Designer, IT Consultant, and DevOps Engineer in progress.  
 
-## ✨ Features
+## ✨ Features  
 
-- **Ultra-clean Design**: Monochromatic, minimalist aesthetic focused on readability
-- **Modern Typography**: Custom Google Fonts (Inter + JetBrains Mono) for professional presentation
-- **Video Background**: Impactful hero section with personal branding video
-- **Responsive Layout**: Optimized for all devices and screen sizes
-- **Blog System**: Integrated blog with category filtering
-- **Performance Optimized**: Built with Astro for maximum speed and SEO
-- **Professional Focus**: Designed to showcase UX/UI and DevOps expertise
+- **Clean & Functional Design**: Simple, professional layout optimized for readability  
+- **Modern Typography**: Google Fonts (Inter + JetBrains Mono) for sharp presentation  
+- **Responsive Layout**: Fully optimized across desktop, tablet, and mobile  
+- **Blog System**: Write-ups on IT labs, DevOps experiments, and Security+ study notes  
+- **Performance Optimized**: Built with Astro for speed and SEO  
+- **Project Showcase**: Highlighting IT support, DevOps labs, and entrepreneurial projects  
 
-## 🚀 Tech Stack
+## 🚀 Tech Stack  
 
-- **Framework**: [Astro](https://astro.build) - For static site generation and performance
-- **Language**: TypeScript for type safety
-- **Styling**: Pure CSS with custom properties (CSS variables)
-- **Typography**: Google Fonts (Inter, JetBrains Mono)
-- **Assets**: Optimized images and videos
-- **Deployment Ready**: Configured for modern hosting platforms
+- **Framework**: [Astro](https://astro.build) for static site generation  
+- **Languages**: TypeScript, Python (learning), Bash  
+- **Styling**: CSS, Tailwind  
+- **Tools & Platforms**: Docker, CasaOS, GitHub Actions, Linux, Security+ Labs  
+- **Hosting**: Netlify / GitHub Pages  
 
-## �️ Project Structure
+## 📂 Project Structure  
 
-```
+```  
 /
 ├── public/
-│   ├── favicon.svg
-│   ├── mp4/                    # Personal branding videos
-│   │   ├── myself_promo_impactful_vide.mp4
-│   │   ├── me_posing_in_office_with_angular_shirt.mp4
-│   │   └── me_selfieprotrait_in_office_with_golang_shirt.mp4
-│   └── png/                    # Professional photos
-│       ├── me_posing_front_google_office_with_golang_shirt.png
-│       └── me_selfieportrait_in_office_with_golang_shirt.png
+│ ├── favicon.svg # Site icon
+│ ├── resume.pdf # Downloadable resume
+│ ├── mp4/ # Background video
+│ │ └── clip.mp4
+│ └── png/ # Placeholder profile images
+│ ├── Chad_Icon.png
+│ ├── Grell_Sutcliff.png
+│ └── Grell_Sutcliff_transparent.png
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro        # Shared layout component
-│   └── pages/
-│       ├── index.astro         # Homepage with hero, about, skills, contact
-│       └── blog.astro          # Blog with filtering and content preview
-├── astro.config.mjs            # Astro configuration
-├── package.json
-├── tsconfig.json
+│ ├── layouts/ # Shared layout components
+│ │ └── Layout.astro
+│ └── pages/ # Site pages
+│ ├── index.astro # Homepage
+│ ├── blog.astro # Blog
+│ └── resume.astro 
+├── astro.config.mjs         
+├── package.json             
+├── tsconfig.json            
 └── README.md
-```
+```  
 
-## 🎯 Design Philosophy
+## 🎯 Design Philosophy  
 
-This portfolio embodies a **godly-level** design approach:
+This portfolio reflects my **builder mindset** and approach to growth:  
 
-- **Minimalist Perfection**: Every element serves a purpose
-- **Monochromatic Elegance**: Black, white, and shades of gray for timeless appeal
-- **Typography Excellence**: Carefully selected fonts for optimal readability
-- **Professional Impact**: Designed to make a strong first impression
-- **User Experience Focus**: Intuitive navigation and smooth interactions
+- **Minimalist Clarity**: Focused on content and readability  
+- **Purpose-Driven Projects**: Every section ties back to IT, DevOps, or security learning  
+- **Real-World Simulation**: Labs and projects mirror enterprise workflows  
+- **Professional Storytelling**: Turning self-study into visible, credible experience  
 
-## 🧞 Commands
-
-All commands are run from the root of the project:
+## 🧞 Commands  
 
 | Command             | Action                                           |
 | :------------------ | :----------------------------------------------- |
-| `npm install`       | Installs dependencies                            |
-| `npm run dev`       | Starts local dev server at `localhost:4321`      |
-| `npm run build`     | Build your production site to `./dist/`          |
-| `npm run preview`   | Preview your build locally, before deploying     |
-| `npm run astro ...` | Run CLI commands like `astro add`, `astro check` |
+| `npm install`       | Install dependencies                            |
+| `npm run dev`       | Start local dev server at `localhost:4321`      |
+| `npm run build`     | Build production site to `./dist/`              |
+| `npm run preview`   | Preview your build locally before deploying     |
+| `npm run astro ...` | Run Astro CLI commands (e.g. `astro add`)       |  
 
-## 🌟 About Veronika
+## 🌟 About Idi  
 
-**Veronika Flores** is a 23-year-old UX/UI Engineer and DevOps Specialist currently working at Google in California. Originally from Mexico, she brings 3+ years of experience in:
+**Idi Ooko** is an Continuous Improvement Technician bridging **UI/UX design, IT support, and DevOps engineering**.  
 
-- **UX/UI Design**: Figma, Design Systems, User Research
-- **Frontend Development**: Angular, TypeScript, CSS, Tailwind
-- **Backend & DevOps**: Go, Kubernetes, Docker, GCP
-- **Personal Style**: Kawaii aesthetic, anime and gaming enthusiast
+- **IT & Support**: Google IT Support Certified, Tier 2 experience with Apple devices, help desk support for higher education  
+- **UI/UX & Tools**: Designed internal lab tools at Daikin, focusing on ISO 17025 compliance, usability, and efficiency  
+- **DevOps & Labs**: CasaOS home lab, Rogue AI Dashboard (automation project), Minecraft hosting servers  
+- **Security & Compliance**: Audit prep at Daikin + Security+ training in progress  
+- **Personal Style**: Creative, multi-disciplinary, bridging design, tech, and compliance  
 
-## � Connect
+## 📂 Featured Projects  
 
-- **GitHub**: [VeronikkAhri](https://github.com/VeronikkAhri)
-- **LinkedIn**: [veronika-flores](https://www.linkedin.com/in/veronika-flores-8b469136b/)
-- **TikTok**: [@deveronikkahri](https://www.tiktok.com/@deveronikkahri)
+### 🧠 Second Brain AI Dashboard (DevOps Automation Lab)  
+- Built a self-hosted “second brain” using Docker, GitHub Actions, and Terraform.  
+- Automated workflows for task tracking, observability, and deployment pipelines.  
+- Demonstrates **CI/CD**, **infrastructure-as-code**, and containerization.  
 
-## 📄 License
+### 🖥️ CasaOS Home Lab  
+- Configured Linux servers and containers for sysadmin practice.  
+- Managed users, SSH access, and system monitoring.  
+- Expanded with a Windows Server + Active Directory lab for enterprise readiness.  
 
-This project is a personal portfolio. All rights reserved by Veronika Flores.
+### 🔐 Security+ Training Labs  
+- Applied Security+ concepts in a controlled environment:  
+  - Configured firewalls and permissions.  
+  - Practiced least-privilege policies.  
+  - Documented incident response workflows.  
+- Bridges ISO 17025 compliance work with IT security foundations.  
 
----
+### 🎮 Minecraft Server Hosting Business  
+- Designed and deployed containerized Minecraft servers with automated backups.  
+- Managed networking, user accounts, and customer billing.  
+- Demonstrated cloud hosting, DevOps, and entrepreneurship.  
 
-_Crafted with passion using Astro. Built for impact, designed for elegance._
+## 🔗 Connect  
+
+- **GitHub**: [N3onKashimo](https://github.com/N3onKashimo)  
+- **LinkedIn**: [idi-ooko](https://www.linkedin.com/in/imooko/)  
+- **Portfolio Blog**: [ididev.netlify.app](https://ididev.netlify.app)  
+
+## 📄 License  
+
+This portfolio is a personal project. Built to share my journey into IT, DevOps, and security.  
+
+---  
+
+_Crafted with intent using Astro. Documenting growth, showcasing projects, and building for impact._  

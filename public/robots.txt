@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://veronikadev.netlify.app/sitemap.xml
+Sitemap: https://idi.netlify.app/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1

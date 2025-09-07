@@ -1,0 +1,117 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+const post = {
+  title: "Creating Internal Lab Websites to Support Engineering Teams",
+  date: "2024-02-06",
+  readTime: "5 min read",
+  category: "Career",
+  excerpt:
+    "I migrated corrective actions, risk management, and customer complaint logs from scattered docs into an internal lab site. What started with Figma ended up in Excel mockups — not conventional, but it fit the team’s workflow and made compliance tools usable.",
+  slug: "internal-lab-websites-engineering"
+};
+---
+
+<BlogLayout post={post}>
+  <h2>From Shared Docs to Internal Sites</h2>
+  <p>
+    When I joined as a Continuous Improvement Technician, one of the first big
+    projects handed to me was migrating critical ISO 17025 processes — corrective
+    actions, risk management, and customer complaints — off shared documents and
+    into an internal lab website. The goal wasn’t just “go digital.” It was about
+    building something engineers would actually use day to day instead of
+    forgetting in a folder somewhere.
+  </p>
+
+  <h2>Corrective Actions</h2>
+  <p>
+    Corrective actions are the bread and butter of compliance. Anytime an audit
+    revealed an issue, or a process slipped, we had to track the problem, the
+    fix, and the verification. In shared docs, this was messy — multiple versions,
+    no clear status, and no accountability.
+  </p>
+  <p>
+    The website version gave us a cleaner flow: open corrective actions, assigned
+    owners, deadlines, and progress tracking that didn’t get buried. It made the
+    difference between “something we react to once a year” and “a living system
+    that keeps us accountable.”
+  </p>
+
+  <h2>Risk Management</h2>
+  <p>
+    Risk management had the same issue — lots of notes floating around, but no
+    central way to prioritize. My job was to help create a page that allowed
+    engineers to log risks, assign severity scores, and record mitigations in a
+    structured way. 
+  </p>
+  <p>
+    Moving this into the site meant people could actually see the bigger picture:
+    what risks were open, what was under control, and what needed immediate
+    attention. That visibility made risk less abstract and more like an active
+    checklist.
+  </p>
+
+  <h2>Customer Complaints</h2>
+  <p>
+    Customer complaints had to be handled carefully. Every single one needed a
+    record: what the issue was, who reported it, what action was taken, and how
+    it was resolved. Before, this lived in shared spreadsheets that got cluttered
+    fast. By porting it into the internal website, we created a cleaner, traceable
+    log that not only helped compliance but also gave managers a snapshot of
+    trends.
+  </p>
+
+  <blockquote>
+    “Taking these processes out of scattered spreadsheets and putting them into
+    a site turned them from static records into tools the team could actually
+    work with.”
+  </blockquote>
+
+  <h2>UI/UX with Engineers (and Excel?)</h2>
+  <p>
+    At first, I approached this like any design project — I used Figma to sketch
+    out how the pages might look and flow. Buttons, fields, and layouts felt more
+    natural to test visually. But then I was advised to move everything into
+    Excel for mockups. At first, it felt backwards — who uses Excel as a UX tool?
+  </p>
+
+  <p>
+    But in this environment, Excel made sense. It was familiar, easy to share,
+    and didn’t require engineers to learn a new design platform just to give
+    feedback. Using Excel as a pseudo-wireframing tool wasn’t conventional, but
+    it fit the workflow the team already trusted. And in the end, adoption
+    mattered more than “best practices.”
+  </p>
+
+  <h2>What I Learned</h2>
+  <ul>
+    <li>
+      <strong>Compliance tools need buy-in:</strong> If people won’t use it,
+      it doesn’t matter how polished it looks.
+    </li>
+    <li>
+      <strong>UI/UX is relative:</strong> In some environments, Excel can be a
+      design tool if it gets the job done.
+    </li>
+    <li>
+      <strong>Porting isn’t just copying:</strong> Moving from shared docs to
+      a site means rethinking how information flows, not just where it lives.
+    </li>
+  </ul>
+
+  <h2>Looking Back</h2>
+  <p>
+    The project showed me that building internal tools is less about perfect
+    design and more about practical adoption. Engineers didn’t need Figma
+    prototypes — they needed clear, usable pages that fit into their workflow.
+    By the end, the corrective action, risk management, and complaint pages
+    weren’t just compliance checkboxes — they were live tools that made our lab
+    more accountable and audit-ready.
+  </p>
+
+  <p>
+    It was a reminder that IT and process improvement overlap in unexpected ways
+    — sometimes the most “technical” part of the job is making sure people
+    actually want to use what you build.
+  </p>
+</BlogLayout>
