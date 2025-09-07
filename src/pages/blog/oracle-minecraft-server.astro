@@ -1,0 +1,121 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+const post = {
+  title: "Running a Free Minecraft Server on Oracle Cloud",
+  date: "2021-11-12",
+  readTime: "4 min read",
+  category: "Personal",
+  excerpt:
+    "How I turned free Oracle credits into a 24/7 Minecraft server. A crash course in Linux commands, port forwarding, and why sysadmin skills matter — even for gaming.",
+  slug: "oracle-minecraft-server",
+};
+---
+<BlogLayout post={post}>
+  <h2>Why Oracle, Why Minecraft?</h2>
+  <p>
+    I’ve always been the kind of person who looks for the free option first.
+    Paying monthly for a Minecraft server? Not happening. After digging around,
+    I found out Oracle has this “Always Free” cloud tier that gives you two VMs
+    you can run forever. Perfect. Free is my favorite price.
+  </p>
+
+  <p>
+    At first, I wasn’t thinking “cloud computing lab” or “sysadmin practice.” I
+    just wanted a way to keep a world up 24/7 without my laptop cooking itself
+    to death. But once I started setting it up, I realized there was a little
+    more to it than just double-clicking a server icon.
+  </p>
+
+  <h2>Cheap (Well, Free) Hardware</h2>
+  <p>
+    Oracle’s free VMs aren’t powerful — 1 CPU and 1GB of RAM — but Minecraft
+    doesn’t need much. And since it’s free, if I broke something I could just
+    delete the VM and spin up a new one. Honestly, that’s what made it fun: low
+    stakes, no bill, plenty of room to mess around.
+  </p>
+
+  <h2>SSH Adventures</h2>
+  <p>
+    The first time I booted the VM I was staring at a black screen with a
+    blinking cursor. No buttons, no icons, no clue. That’s when I had to figure
+    out SSH — basically, logging into the server through the terminal. Once I
+    got in, it was like talking to the computer directly. A little intimidating
+    at first, but kind of addicting once I realized every command actually did
+    something.
+  </p>
+
+  <pre><code># connect into the VM
+ssh ubuntu@public-ip
+
+# basic survival move
+sudo apt update && sudo apt upgrade -y
+</code></pre>
+
+  <p>
+    That’s how I started every session: patching it, breaking it, fixing it
+    again.
+  </p>
+
+  <h2>Getting Minecraft Running</h2>
+  <p>
+    I grabbed the Minecraft server .jar, installed Java, and hit “run.” Easy.
+    Except nobody else could join. Turns out Oracle doesn’t just let traffic
+    through. I had to open up port <code>25565</code> on their side and the VM’s
+    firewall. Basically, two layers of “nope” I had to turn into “yes.” Took me
+    a few tries, but eventually it worked. My friends joined, and the world was
+    alive.
+  </p>
+
+  <blockquote>
+    “There’s nothing like spending hours fixing firewall rules just to play
+    Minecraft for free.”
+  </blockquote>
+
+  <h2>Free Means Flexible</h2>
+  <p>
+    Once the server was stable, I realized I could use these free VMs for more
+    than just Minecraft. I messed around with Plex for media, tried setting up
+    Nextcloud for file storage, even threw WireGuard on there for a VPN. It
+    wasn’t about running perfect services — it was about seeing what I could get
+    away with on free hardware.
+  </p>
+
+  <p>
+    The best part? If I trashed the VM, who cared. Just delete, rebuild, move
+    on. No sunk cost, no stress.
+  </p>
+
+  <h2>What I Learned (Besides Saving $)</h2>
+  <ul>
+    <li>
+      <strong>Linux is trial by error:</strong> You don’t really learn it until
+      you break stuff and have to fix it.
+    </li>
+    <li>
+      <strong>Networking isn’t optional:</strong> Firewalls and ports will
+      humble you, no matter what you’re running.
+    </li>
+    <li>
+      <strong>Backups matter:</strong> Trust me, friends will never forgive you
+      if the world disappears.
+    </li>
+    <li>
+      <strong>Free is motivating:</strong> I wouldn’t have learned half this if
+      Oracle was charging me $20 a month.
+    </li>
+  </ul>
+
+  <h2>Looking Back</h2>
+  <p>
+    My “free Minecraft server” ended up being my crash course in cloud basics.
+    I wasn’t out to become an IT pro that day — I just wanted a game server
+    without paying. But along the way I picked up Linux, networking, firewalls,
+    and a little confidence in breaking things and putting them back together.
+  </p>
+
+  <p>
+    Free servers, free lessons. That’s kind of been my approach ever since.
+  </p>
+</BlogLayout>
+
