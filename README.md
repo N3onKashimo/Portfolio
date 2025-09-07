@@ -23,16 +23,22 @@ A minimalist portfolio and blog built with Astro, TypeScript, and modern CSS. Sh
 
 ```  
 /
-├── public/                  
-│   ├── favicon.svg          
-│   ├── mp4/                 # Demo or branding clips
-│   └── png/                 # Personal/project images
-├── src/                     
-│   ├── layouts/             
-│   │   └── Layout.astro     
-│   └── pages/               
-│       ├── index.astro      # Homepage (about, skills, projects, contact)
-│       └── blog.astro       # Blog posts + filtering
+├── public/
+│ ├── favicon.svg # Site icon
+│ ├── resume.pdf # Downloadable resume
+│ ├── mp4/ # Background video
+│ │ └── clip.mp4
+│ └── png/ # Placeholder profile images
+│ ├── Chad_Icon.png
+│ ├── Grell_Sutcliff.png
+│ └── Grell_Sutcliff_transparent.png
+├── src/
+│ ├── layouts/ # Shared layout components
+│ │ └── Layout.astro
+│ └── pages/ # Site pages
+│ ├── index.astro # Homepage
+│ ├── blog.astro # Blog
+│ └── resume.astro 
 ├── astro.config.mjs         
 ├── package.json             
 ├── tsconfig.json            
