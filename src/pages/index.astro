@@ -2,1600 +2,177 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="Idi Ooko - UX/UI Engineer & DevOps Specialist at Rogue It Solutions LLC. 3+ years experience in Go, Angular, Figma, and user-centered design."
-    />
-    <meta
-      name="keywords"
-      content="UX/UI Engineer, DevOps, Google, Angular, Go, Figma, Tailwind CSS, Frontend Developer, Idi Ooko, Mexico California, Tech Professional"
-    />
-    <meta name="author" content="Idi Ooko" />
-    <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ididev.netlify.app/" />
-    <meta
-      property="og:title"
-      content="Idi Ooko - UX/UI Engineer & DevOps Specialist at Rogue It Solutions LLC"
-    />
-    <meta
-      property="og:description"
-      content="Professional portfolio of Idi Ooko, UX/UI Engineer & DevOps Specialist at Rogue It Solutions LLC. 3+ years experience in Go, Angular, Figma, and user-centered design."
-    />
-    <meta
-      property="og:image"
-      content="https://ididevops.netlify.app/png/Grell_Sutcliff.png"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Idi Ooko at Rogue It Solutions LLC Office" />
-    <meta property="og:site_name" content="Idi Ooko Portfolio" />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://ididevops.netlify.app/" />
-    <meta
-      property="twitter:title"
-      content="Idi Ooko - UX/UI Engineer & DevOps Specialist at Rogue It Solutions LLC"
-    />
-    <meta
-      property="twitter:description"
-      content="Professional portfolio of Idi Ooko, UX/UI Engineer & DevOps Specialist at Rogue It Solutions LLC. 3+ years experience in Go, Angular, Figma, and user-centered design."
-    />
-    <meta
-      property="twitter:image"
-      content="https://ididevops.netlify.app/png/Grell_Sutcliff.png"
-    />
-    <meta
-      property="twitter:image:alt"
-      content="Idi Ooko at Rogue It Solutions LLC Office"
-    />
-
-    <!-- LinkedIn -->
-    <meta property="article:author" content="Idi Ooko" />
-    <meta
-      property="article:publisher"
-      content="https://www.linkedin.com/in/idi-ooko/"
-    />
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://ididev.netlify.app/" />
-
-    <!-- Additional SEO -->
-    <link rel="sitemap" href="/sitemap.xml" />
-    <meta
-      name="robots"
-      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-    />
-    <meta name="googlebot" content="index, follow" />
-    <!-- Performance & Security -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="theme-color"
-      content="#ffffff"
-      media="(prefers-color-scheme: light)"
-    />
-    <meta
-      name="theme-color"
-      content="#0a0a0a"
-      media="(prefers-color-scheme: dark)"
-    />
-    <meta name="msapplication-TileColor" content="#000000" />
-    <!-- Prefetch DNS for external resources -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Idi Ooko",
-        "jobTitle": "UX/UI Engineer & DevOps Specialist",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Rogue It Solutions LLC",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Texas",
-            "addressCountry": "US"
-          }
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Texas",
-          "addressCountry": "US"
-        },
-        "nationality": "Mexican",
-        "url": "https://ididev.netlify.app/",
-        "image": "https://ididev.netlify.app/png/Grell_Sutcliff.png",
-        "sameAs": [
-          "https://github.com/N3onKashimo",
-          "https://www.linkedin.com/in/imooko/",
-        ],
-        "knowsAbout": [
-          "UX Design",
-          "UI Development",
-          "DevOps",
-          "Angular",
-          "Go Programming",
-          "Figma",
-          "Google Cloud Platform",
-          "Kubernetes",
-          "TypeScript",
-          "CSS",
-          "Tailwind CSS",
-          "Design Systems"
-        ],
-        "description": "UX/UI Engineer & DevOps Specialist at Google California with 3+ years experience in Go, Angular, Figma, and user-centered design.",
-        "hasCredential": [
-          {
-            "@type": "EducationalOccupationalCredential",
-            "name": "UX Design Certification"
-          },
-          {
-            "@type": "EducationalOccupationalCredential",
-            "name": "Google Cloud Certification"
-          }
-        ]
-      }
-    </script>
-
-    <!-- Ultra-modern typography from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-
-    <title>Idi Ooko • UX/UI Engineer & DevOps</title>
-    <style>
-      :root {
-        /* Light mode colors */
-        --color-primary: #000000;
-        --color-secondary: #404040;
-        --color-tertiary: #808080;
-        --color-accent: #f5f5f5;
-        --color-background: #ffffff;
-        --color-surface: #fafafa;
-        --color-hero-text: #ffffff;
-        --color-hero-secondary: rgba(255, 255, 255, 0.9);
-        --color-nav-bg: rgba(255, 255, 255, 0.95);
-        --color-nav-bg-scroll: rgba(255, 255, 255, 0.98);
-        --font-primary: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-        --font-mono: "JetBrains Mono", "Courier New", monospace;
-        --spacing-xs: 0.5rem;
-        --spacing-sm: 1rem;
-        --spacing-md: 2rem;
-        --spacing-lg: 4rem;
-        --spacing-xl: 6rem;
-        --border-radius: 2px;
-        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      /* Dark mode colors */
-      [data-theme="dark"] {
-        --color-primary: #ffffff;
-        --color-secondary: #e4e4e7;
-        --color-tertiary: #a1a1aa;
-        --color-accent: #18181b;
-        --color-background: #0a0a0a;
-        --color-surface: #141414;
-        --color-hero-text: #ffffff;
-        --color-hero-secondary: rgba(255, 255, 255, 0.9);
-        --color-nav-bg: rgba(10, 10, 10, 0.95);
-        --color-nav-bg-scroll: rgba(10, 10, 10, 0.98);
-      }
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        transition:
-          background-color 0.3s ease,
-          color 0.3s ease,
-          border-color 0.3s ease;
-      }
-
-      html {
-        font-family: var(--font-primary);
-        font-size: 16px;
-        line-height: 1.6;
-        scroll-behavior: smooth;
-      }
-      body {
-        background-color: var(--color-background);
-        color: var(--color-primary);
-        font-weight: 400;
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      /* Improve text readability on all devices */
-      @media (max-width: 768px) {
-        body {
-          text-rendering: optimizeSpeed;
-        }
-      }
-
-      /* Hero Section with Video Background */
-      .hero {
-        position: relative;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-      }
-      .hero-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top center;
-        z-index: -2;
-        opacity: 1;
-        filter: brightness(0.9) contrast(1.2) saturate(0.8);
-      }
-
-      /* Responsive video positioning */
-      @media (max-width: 768px) {
-        .hero-video {
-          object-position: center center;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero-video {
-          object-position: 30% center;
-        }
-      }
-      .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.85) 0%,
-          rgba(255, 255, 255, 0.75) 50%,
-          rgba(255, 255, 255, 0.85) 100%
-        );
-        z-index: -1;
-        transition: var(--transition);
-      }
-
-      /* Dark mode hero overlay */
-      [data-theme="dark"] .hero-overlay {
-        background: linear-gradient(
-          135deg,
-          rgba(0, 0, 0, 0.75) 0%,
-          rgba(0, 0, 0, 0.65) 50%,
-          rgba(0, 0, 0, 0.75) 100%
-        );
-      }
-
-      .hero-content {
-        text-align: center;
-        z-index: 1;
-        max-width: 900px;
-        animation: fadeInUp 1s ease-out;
-        padding: var(--spacing-md);
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .hero-title {
-        font-family: var(--font-primary);
-        font-size: clamp(4rem, 8.5vw, 6.5rem);
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        margin-bottom: var(--spacing-sm);
-        line-height: 0.9;
-        color: var(--color-primary);
-        text-shadow:
-          0 3px 6px rgba(255, 255, 255, 0.9),
-          0 1px 3px rgba(0, 0, 0, 0.1);
-        transition: var(--transition);
-      }
-
-      .hero-subtitle {
-        font-family: var(--font-primary);
-        font-size: clamp(1.2rem, 2.8vw, 1.6rem);
-        font-weight: 500;
-        color: var(--color-secondary);
-        margin-bottom: var(--spacing-md);
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        text-shadow:
-          0 2px 4px rgba(255, 255, 255, 0.95),
-          0 1px 2px rgba(0, 0, 0, 0.1);
-        transition: var(--transition);
-      }
-
-      .hero-description {
-        font-family: var(--font-primary);
-        font-size: clamp(1.1rem, 2.2vw, 1.3rem);
-        color: var(--color-secondary);
-        max-width: 600px;
-        margin: 0 auto var(--spacing-lg);
-        line-height: 1.6;
-        font-weight: 400;
-        text-shadow:
-          0 2px 4px rgba(255, 255, 255, 0.95),
-          0 1px 2px rgba(0, 0, 0, 0.1);
-        transition: var(--transition);
-      }
-
-      /* Dark mode hero text shadows */
-      [data-theme="dark"] .hero-title {
-        text-shadow:
-          0 3px 6px rgba(0, 0, 0, 0.9),
-          0 1px 3px rgba(255, 255, 255, 0.1);
-      }
-
-      [data-theme="dark"] .hero-subtitle {
-        text-shadow:
-          0 2px 4px rgba(0, 0, 0, 0.95),
-          0 1px 2px rgba(255, 255, 255, 0.1);
-      }
-
-      [data-theme="dark"] .hero-description {
-        text-shadow:
-          0 2px 4px rgba(0, 0, 0, 0.95),
-          0 1px 2px rgba(255, 255, 255, 0.1);
-      }
-
-      .hero-cta {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--spacing-xs);
-        padding: var(--spacing-sm) var(--spacing-md);
-        background: var(--color-primary);
-        color: var(--color-background);
-        text-decoration: none;
-        font-weight: 400;
-        font-size: 0.9rem;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        transition: var(--transition);
-        border-radius: var(--border-radius);
-        border: 1px solid var(--color-primary);
-      }
-
-      .hero-cta:hover {
-        background: var(--color-background);
-        color: var(--color-primary);
-        transform: translateY(-1px);
-      } /* Navigation */
-      .nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: var(--spacing-sm) var(--spacing-md);
-        background: var(--color-nav-bg);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(128, 128, 128, 0.1);
-        z-index: 1000;
-        transition: var(--transition);
-      }
-
-      .nav-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .nav-logo {
-        font-family: var(--font-mono);
-        font-weight: 500;
-        font-size: 1.125rem;
-        color: var(--color-primary);
-        text-decoration: none;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: var(--spacing-md);
-        list-style: none;
-        align-items: center;
-      }
-
-      .nav-link {
-        color: var(--color-secondary);
-        text-decoration: none;
-        font-weight: 400;
-        font-size: 0.9rem;
-        letter-spacing: 0.5px;
-        transition: var(--transition);
-        text-transform: uppercase;
-      }
-
-      .nav-link:hover {
-        color: var(--color-primary);
-      } /* Dark mode toggle button */
-      .theme-toggle {
-        background: none;
-        border: none;
-        border-radius: var(--border-radius);
-        padding: var(--spacing-xs);
-        cursor: pointer;
-        color: var(--color-secondary);
-        font-size: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        transition: var(--transition);
-        margin-left: var(--spacing-sm);
-      }
-
-      .theme-toggle:hover {
-        color: var(--color-primary);
-        transform: scale(1.05);
-        background: rgba(128, 128, 128, 0.1);
-      }
-
-      .theme-toggle:focus {
-        outline: none;
-        background: rgba(128, 128, 128, 0.15);
-      }
-
-      /* Sections */
-      .section {
-        padding: var(--spacing-xl) var(--spacing-md);
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .section-title {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        font-weight: 300;
-        letter-spacing: -0.02em;
-        margin-bottom: var(--spacing-lg);
-        text-align: center;
-      }
-
-      /* About Section */
-      .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: var(--spacing-lg);
-        align-items: center;
-      }
-      .about-image {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        border-radius: var(--border-radius);
-        filter: grayscale(100%);
-        transition: var(--transition);
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-      }
-
-      .about-image:hover {
-        filter: grayscale(0%);
-      }
-
-      /* Responsive image sizing */
-      @media (max-width: 768px) {
-        .about-image {
-          height: 300px;
-          max-width: 300px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .about-image {
-          height: 250px;
-          max-width: 250px;
-        }
-      }
-
-      .about-content h3 {
-        font-size: 1.5rem;
-        font-weight: 500;
-        margin-bottom: var(--spacing-sm);
-        color: var(--color-primary);
-      }
-
-      .about-content p {
-        color: var(--color-secondary);
-        margin-bottom: var(--spacing-sm);
-        line-height: 1.7;
-      }
-
-      .about-stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--spacing-md);
-        margin-top: var(--spacing-md);
-      }
-
-      .stat {
-        text-align: center;
-        padding: var(--spacing-sm);
-      }
-
-      .stat-number {
-        font-size: 2rem;
-        font-weight: 600;
-        color: var(--color-primary);
-        display: block;
-      }
-
-      .stat-label {
-        font-size: 0.875rem;
-        color: var(--color-tertiary);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      /* Skills Section */
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: var(--spacing-md);
-      }
-      .skill-category {
-        padding: var(--spacing-md);
-        background: var(--color-surface);
-        border-radius: var(--border-radius);
-        transition: var(--transition);
-        border: 1px solid transparent;
-      }
-
-      .skill-category:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Dark mode skill category */
-      [data-theme="dark"] .skill-category {
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      [data-theme="dark"] .skill-category:hover {
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        border-color: rgba(255, 255, 255, 0.2);
-      }
-
-      .skill-category h3 {
-        font-size: 1.25rem;
-        font-weight: 500;
-        margin-bottom: var(--spacing-sm);
-        color: var(--color-primary);
-      }
-
-      .skill-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--spacing-xs);
-      }
-      .skill-tag {
-        padding: 0.25rem 0.75rem;
-        background: var(--color-background);
-        border: 1px solid rgba(128, 128, 128, 0.2);
-        border-radius: var(--border-radius);
-        font-size: 0.875rem;
-        color: var(--color-secondary);
-        font-family: var(--font-mono);
-        transition: var(--transition);
-      }
-
-      /* Dark mode skill tags */
-      [data-theme="dark"] .skill-tag {
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-
-      /* Contact Section */
-      .contact-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-lg);
-      }
-
-      .media-item {
-        background: var(--color-surface);
-        border-radius: var(--border-radius);
-        overflow: hidden;
-        transition: var(--transition);
-      }
-
-      .media-item:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      }
-
-      .media-video,
-      .media-photo {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        transition: var(--transition);
-      }
-
-      .media-video:hover,
-      .media-photo:hover {
-        filter: brightness(1.1);
-      }
-
-      .media-content {
-        padding: var(--spacing-md);
-      }
-
-      .media-content h3 {
-        font-size: 1.25rem;
-        font-weight: 500;
-        margin-bottom: var(--spacing-sm);
-        color: var(--color-primary);
-      }
-
-      .media-content p {
-        color: var(--color-secondary);
-        line-height: 1.6;
-        font-size: 0.95rem;
-      }
-
-      .contact-info h3 {
-        font-size: 1.5rem;
-        font-weight: 500;
-        margin-bottom: var(--spacing-sm);
-      }
-
-      .contact-links {
-        list-style: none;
-        margin-top: var(--spacing-md);
-      }
-
-      .contact-links li {
-        margin-bottom: var(--spacing-sm);
-      }
-
-      .contact-links a {
-        color: var(--color-secondary);
-        text-decoration: none;
-        font-family: var(--font-mono);
-        font-size: 0.9rem;
-        transition: var(--transition);
-        display: inline-flex;
-        align-items: center;
-        gap: var(--spacing-xs);
-      }
-
-      .contact-links a:hover {
-        color: var(--color-primary);
-      }
-      .availability {
-        background: var(--color-surface);
-        padding: var(--spacing-md);
-        border-radius: var(--border-radius);
-        text-align: center;
-        border: 1px solid transparent;
-        transition: var(--transition);
-      } /* Dark mode availability */
-      [data-theme="dark"] .availability {
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .availability-status {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--spacing-xs);
-        font-weight: 500;
-        color: #22c55e;
-        margin-bottom: var(--spacing-sm);
-      }
-
-      .availability-dot {
-        width: 8px;
-        height: 8px;
-        background: #22c55e;
-        border-radius: 50%;
-        animation: pulse 2s infinite;
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.5;
-        }
-      }
-
-      /* Footer */
-      .footer {
-        border-top: 1px solid rgba(128, 128, 128, 0.2);
-        padding: var(--spacing-md);
-        text-align: center;
-        color: var(--color-tertiary);
-        font-size: 0.875rem;
-        transition: var(--transition);
-      } /* Ultra Responsive Design */
-
-      /* Large Desktop (1400px+) */
-      @media (min-width: 1400px) {
-        .section {
-          max-width: 1400px;
-          padding: var(--spacing-xl) var(--spacing-lg);
-        }
-
-        .hero-content {
-          max-width: 1000px;
-        }
-
-        .about-grid {
-          gap: var(--spacing-xl);
-        }
-
-        .skills-grid {
-          grid-template-columns: repeat(4, 1fr);
-        }
-      }
-
-      /* Desktop (1024px - 1399px) */
-      @media (max-width: 1399px) and (min-width: 1024px) {
-        .section {
-          padding: var(--spacing-xl) var(--spacing-md);
-        }
-
-        .skills-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      /* Tablet Landscape (900px - 1023px) */
-      @media (max-width: 1023px) and (min-width: 900px) {
-        .hero-title {
-          font-size: clamp(3.5rem, 7vw, 5rem);
-        }
-
-        .hero-subtitle {
-          font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-        }
-
-        .hero-description {
-          font-size: clamp(1rem, 2vw, 1.2rem);
-        }
-
-        .about-grid {
-          grid-template-columns: 1fr 1.5fr;
-          gap: var(--spacing-lg);
-        }
-
-        .skills-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: var(--spacing-md);
-        }
-
-        .contact-grid {
-          gap: var(--spacing-md);
-        }
-      }
-
-      /* Tablet Portrait (768px - 899px) */
-      @media (max-width: 899px) and (min-width: 768px) {
-        .nav-container {
-          padding: 0 var(--spacing-sm);
-        }
-
-        .nav-links {
-          gap: var(--spacing-sm);
-        }
-
-        .nav-link {
-          font-size: 0.8rem;
-        }
-
-        .hero {
-          height: 90vh;
-          min-height: 600px;
-        }
-
-        .hero-content {
-          padding: var(--spacing-sm);
-        }
-
-        .hero-title {
-          font-size: clamp(3rem, 8vw, 4.5rem);
-          margin-bottom: var(--spacing-xs);
-        }
-
-        .hero-subtitle {
-          font-size: clamp(1rem, 2.5vw, 1.3rem);
-          margin-bottom: var(--spacing-sm);
-        }
-
-        .hero-description {
-          font-size: clamp(0.95rem, 2vw, 1.15rem);
-          margin-bottom: var(--spacing-md);
-        }
-
-        .section {
-          padding: var(--spacing-lg) var(--spacing-sm);
-        }
-
-        .section-title {
-          font-size: clamp(2rem, 5vw, 2.8rem);
-          margin-bottom: var(--spacing-md);
-        }
-
-        .about-grid {
-          grid-template-columns: 1fr;
-          gap: var(--spacing-md);
-          text-align: center;
-        }
-
-        .about-image {
-          max-width: 300px;
-          height: 300px;
-          margin: 0 auto;
-        }
-
-        .about-stats {
-          justify-content: center;
-          max-width: 400px;
-          margin: var(--spacing-md) auto 0;
-        }
-
-        .skills-grid {
-          grid-template-columns: 1fr;
-          gap: var(--spacing-sm);
-        }
-
-        .contact-grid {
-          grid-template-columns: 1fr;
-          gap: var(--spacing-md);
-        }
-      } /* Mobile Landscape & Large Mobile (480px - 767px) */
-      @media (max-width: 767px) and (min-width: 480px) {
-        .nav {
-          padding: var(--spacing-xs) var(--spacing-sm);
-        }
-
-        .nav-container {
-          flex-direction: row;
-          justify-content: space-between;
-        }
-
-        .nav-logo {
-          font-size: 1rem;
-        }
-
-        .nav-links {
-          display: flex;
-          gap: var(--spacing-xs);
-        }
-
-        .nav-link {
-          font-size: 0.75rem;
-          padding: var(--spacing-xs);
-        }
-
-        .theme-toggle {
-          width: 32px;
-          height: 32px;
-          font-size: 0.9rem;
-          margin-left: var(--spacing-xs);
-        }
-
-        .hero {
-          height: 80vh;
-          min-height: 500px;
-        }
-
-        .hero-content {
-          padding: var(--spacing-sm);
-        }
-
-        .hero-title {
-          font-size: clamp(2.5rem, 9vw, 3.5rem);
-          line-height: 0.85;
-        }
-
-        .hero-subtitle {
-          font-size: clamp(0.9rem, 3vw, 1.1rem);
-          margin-bottom: var(--spacing-sm);
-        }
-
-        .hero-description {
-          font-size: clamp(0.9rem, 2.5vw, 1rem);
-          margin-bottom: var(--spacing-sm);
-          max-width: 90%;
-        }
-
-        .hero-cta {
-          padding: var(--spacing-xs) var(--spacing-sm);
-          font-size: 0.8rem;
-        }
-
-        .section {
-          padding: var(--spacing-md) var(--spacing-sm);
-        }
-
-        .section-title {
-          font-size: clamp(1.8rem, 6vw, 2.5rem);
-        }
-
-        .about-content h3 {
-          font-size: 1.2rem;
-        }
-
-        .about-content p {
-          font-size: 0.9rem;
-        }
-
-        .about-stats {
-          grid-template-columns: repeat(3, 1fr);
-          gap: var(--spacing-xs);
-        }
-
-        .stat-number {
-          font-size: 1.5rem;
-        }
-
-        .stat-label {
-          font-size: 0.75rem;
-        }
-
-        .skill-category {
-          padding: var(--spacing-sm);
-        }
-
-        .skill-category h3 {
-          font-size: 1.1rem;
-        }
-
-        .skill-tag {
-          padding: 0.2rem 0.5rem;
-          font-size: 0.8rem;
-        }
-
-        .contact-info h3 {
-          font-size: 1.2rem;
-        }
-
-        .contact-info p {
-          font-size: 0.9rem;
-        }
-
-        .contact-links a {
-          font-size: 0.8rem;
-        }
-      } /* Small Mobile (320px - 479px) */
-      @media (max-width: 479px) {
-        .nav {
-          padding: var(--spacing-xs);
-        }
-
-        .nav-container {
-          flex-direction: column;
-          gap: var(--spacing-xs);
-          align-items: center;
-        }
-
-        .nav-logo {
-          font-size: 0.9rem;
-        }
-
-        .nav-links {
-          display: flex;
-          gap: var(--spacing-xs);
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
-        .nav-link {
-          font-size: 0.7rem;
-          padding: 0.25rem 0.5rem;
-        }
-
-        .theme-toggle {
-          width: 28px;
-          height: 28px;
-          font-size: 0.8rem;
-          margin-left: 0;
-          margin-top: var(--spacing-xs);
-        }
-
-        .hero {
-          height: 75vh;
-          min-height: 450px;
-          padding-top: 100px;
-        }
-
-        .hero-content {
-          padding: var(--spacing-xs);
-        }
-
-        .hero-title {
-          font-size: clamp(2rem, 10vw, 2.8rem);
-          line-height: 0.8;
-          margin-bottom: var(--spacing-xs);
-        }
-
-        .hero-subtitle {
-          font-size: clamp(0.8rem, 3.5vw, 1rem);
-          margin-bottom: var(--spacing-xs);
-          line-height: 1.2;
-        }
-
-        .hero-description {
-          font-size: clamp(0.8rem, 2.8vw, 0.9rem);
-          margin-bottom: var(--spacing-sm);
-          line-height: 1.4;
-        }
-
-        .hero-cta {
-          padding: var(--spacing-xs);
-          font-size: 0.75rem;
-          gap: 0.25rem;
-        }
-
-        .section {
-          padding: var(--spacing-sm) var(--spacing-xs);
-        }
-
-        .section-title {
-          font-size: clamp(1.5rem, 7vw, 2rem);
-          margin-bottom: var(--spacing-sm);
-        }
-
-        .about-image {
-          max-width: 250px;
-          height: 250px;
-        }
-
-        .about-content h3 {
-          font-size: 1rem;
-        }
-
-        .about-content p {
-          font-size: 0.85rem;
-          line-height: 1.5;
-        }
-
-        .about-stats {
-          grid-template-columns: 1fr;
-          gap: var(--spacing-xs);
-          max-width: 200px;
-        }
-
-        .stat {
-          padding: var(--spacing-xs);
-        }
-
-        .stat-number {
-          font-size: 1.2rem;
-        }
-
-        .stat-label {
-          font-size: 0.7rem;
-        }
-
-        .skills-grid {
-          gap: var(--spacing-xs);
-        }
-
-        .skill-category {
-          padding: var(--spacing-xs);
-        }
-
-        .skill-category h3 {
-          font-size: 1rem;
-          margin-bottom: var(--spacing-xs);
-        }
-
-        .skill-tags {
-          gap: 0.25rem;
-        }
-
-        .skill-tag {
-          padding: 0.15rem 0.4rem;
-          font-size: 0.7rem;
-        }
-
-        .contact-info h3 {
-          font-size: 1rem;
-        }
-
-        .contact-info p {
-          font-size: 0.85rem;
-        }
-
-        .contact-links {
-          margin-top: var(--spacing-sm);
-        }
-
-        .contact-links li {
-          margin-bottom: var(--spacing-xs);
-        }
-
-        .contact-links a {
-          font-size: 0.75rem;
-          word-break: break-all;
-        }
-
-        .availability {
-          padding: var(--spacing-sm);
-        }
-
-        .availability-status {
-          font-size: 0.85rem;
-        }
-
-        .availability p {
-          font-size: 0.8rem;
-        }
-
-        .footer {
-          padding: var(--spacing-sm) var(--spacing-xs);
-          font-size: 0.75rem;
-        }
-      }
-
-      /* Very Small Mobile (under 320px) */
-      @media (max-width: 319px) {
-        .hero-title {
-          font-size: 1.8rem;
-        }
-
-        .hero-subtitle {
-          font-size: 0.75rem;
-        }
-
-        .hero-description {
-          font-size: 0.75rem;
-        }
-
-        .section-title {
-          font-size: 1.3rem;
-        }
-
-        .about-stats {
-          grid-template-columns: 1fr;
-        }
-
-        .nav-container {
-          flex-direction: column;
-        }
-
-        .nav-links {
-          flex-direction: column;
-          text-align: center;
-        }
-      }
-
-      /* Landscape orientation optimizations */
-      @media (orientation: landscape) and (max-height: 500px) {
-        .hero {
-          height: 100vh;
-          min-height: auto;
-        }
-
-        .hero-content {
-          transform: scale(0.9);
-        }
-
-        .section {
-          padding: var(--spacing-md) var(--spacing-sm);
-        }
-      }
-
-      /* High DPI displays */
-      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        .hero-video {
-          image-rendering: -webkit-optimize-contrast;
-        }
-
-        .about-image {
-          image-rendering: -webkit-optimize-contrast;
-        }
-      }
-
-      /* Reduce motion for accessibility */
-      @media (prefers-reduced-motion: reduce) {
-        .hero-content {
-          animation: none;
-        }
-
-        .availability-dot {
-          animation: none;
-        }
-
-        * {
-          transition: none !important;
-        }
-      }
-
-      /* Smooth scroll offset for fixed nav */
-      html {
-        scroll-padding-top: 80px;
-      }
-      /* === ABOUT: mobile fixes (drop-in overrides) === */
-      .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: var(--spacing-lg);
-        align-items: start;
-      }
-
-      /* Make the image fluid by default */
-      .about-image {
-        width: 100%;
-        height: auto;               /* stop forcing 400/300/250px heights */
-        object-fit: cover;
-        border-radius: var(--border-radius);
-      }
-
-      /* Better paragraph wrapping to avoid side scroll */
-      .about-content p {
-        overflow-wrap: anywhere;
-        hyphens: auto;
-        line-height: 1.7;
-      }
-
-      /* Tablet & down: stack columns, center image, fix stats */
-      @media (max-width: 768px) {
-        .about-grid {
-          grid-template-columns: 1fr;   /* stack */
-          gap: var(--spacing-md);
-          text-align: center;
-        }
-        .about-image {
-          width: min(100%, 280px);
-          margin: 0 auto;
-        }
-        .about-stats {
-          grid-template-columns: repeat(2, 1fr);
-          max-width: 400px;
-          margin: var(--spacing-md) auto 0;
-        }
-      }
-
-      /* Small phones: single-column stats */
-      @media (max-width: 420px) {
-        .about-stats {
-          grid-template-columns: 1fr;
-          max-width: 260px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="nav">
-      <div class="nav-container">
-        <a href="/" class="nav-logo">N3onKashimo // DevOps Engineer</a>
-        <ul class="nav-links">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="/blog" class="nav-link">Blog</a></li>
-          <li><a href="/resume.pdf" target="_blank" class="nav-link">Resume</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-          <li>
-            <button
-              class="theme-toggle"
-              aria-label="Toggle dark mode"
-              title="Toggle dark mode"
-            >
-              <span class="theme-icon">🌙</span>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </nav><!-- Hero Section -->
-    <section class="hero">
-      <video
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-        poster="/png/Grell_Sutcliff.png"
-      >
-        <source src="/mp4/clip.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h1 class="hero-title">Idi Ooko</h1>
-        <p class="hero-subtitle">Continuous Improvement Technician</p>
-        <p class="hero-description">
-           Exploring the crossroads of process improvement, technology, and creative problem-solving. 
-            Passionate about building systems that are reliable, human-centered, and future-focused — 
-            from homelab experiments and personal servers to automation projects and my Second Brain.
-        </p>
-        <a href="#contact" class="hero-cta">
-          <span>Let's Collaborate</span>
-          <span>→</span>
-        </a>
-      </div>
-    </section>
-
-    <!--
-      ABOUT SECTION
-      This section introduces the site owner, their background, and key stats.
-      Maintainers: Update content here to reflect personal/professional info.
-    -->
-    <!-- About Section -->
-    <section id="about" class="section">
-      <h2 class="section-title">About</h2>
-      <div class="about-grid">
-        <img
-          src="/png/Grell_Sutcliff.png"
-          alt="Idi Ooko at Google Office"
-          class="about-image"
-          loading="lazy"
-        />
-        <div class="about-content">
-          <h3>Building Smarter Systems, One Experiment at a Time</h3>
-          <p>
-             I’m Idi Ooko, a Continuous Improvement Technician and aspiring IT Consultant 
-              with a passion for turning ideas into systems that work. Through freelance-style 
-              projects and homelab experiments, I’ve been learning how to bridge process 
-              improvement with practical technology solutions. My focus is on helping peers 
-              and small teams explore what’s possible with Linux, Docker, and automation.
-          </p>
-          <p>
-              In my professional role, I focus on <strong>improving engineering workflows</strong>, 
-             making processes more efficient and reliable. Outside of work, I apply the same 
-             mindset to technology — testing infrastructure in my homelab, experimenting with 
-              Docker containers, and refining the concepts I study while pursuing IT 
-              certifications and apprenticeships.
-          </p>
-          <p>
-             At the heart of my projects is my <strong>Second Brain</strong> — an overthinker’s 
-              fixer, like Jarvis for my personal life. Alongside it, I manage a homelab server 
-              and a Minecraft hosting environment, both of which give me space to validate 
-              DevOps theory in practice. Check out my GitHub and connect with me on LinkedIn 
-              if you’d like to collaborate..
-          </p>
-
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-number">4+</span>
-              <span class="stat-label">Years Experience</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">∞</span>
-              <span class="stat-label">Coffee Consumed</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">100%</span>
-              <span class="stat-label">Passion Driven</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-   <!-- Skills Section -->
-<section id="skills" class="section">
-  <h2 class="section-title">Expertise</h2>
-  <div class="skills-grid">
-
-    <div class="skill-category">
-      <h3>DevOps & Cloud</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Linux</span>
-        <span class="skill-tag">AWS</span>
-        <span class="skill-tag">Terraform</span>
-        <span class="skill-tag">Docker</span>
-        <span class="skill-tag">Jenkins</span>
-        <span class="skill-tag">CI/CD Pipelines</span>
-        <span class="skill-tag">GitHub Actions</span>
-        <span class="skill-tag">Monitoring (Grafana/Prometheus)</span>
-      </div>
-    </div>
-
-    <div class="skill-category">
-      <h3>Software & Automation</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Bash/Shell</span>
-        <span class="skill-tag">Git & Version Control</span>
-        <span class="skill-tag">Scripting</span>
-        <span class="skill-tag">API Integration</span>
-      </div>
-    </div>
-
-    <div class="skill-category">
-      <h3>UI/UX & Frontend</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Figma</span>
-        <span class="skill-tag">Wireframing</span>
-        <span class="skill-tag">Accessibility</span>
-        <span class="skill-tag">HTML/CSS</span>
-        <span class="skill-tag">Tailwind</span>
-        <span class="skill-tag">Astro</span>
-      </div>
-    </div>
-
-    <div class="skill-category">
-      <h3>Certifications & Training</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Google IT Support</span>
-        <span class="skill-tag">CompTIA Security+ (in progress)</span>
-        <span class="skill-tag">AWS Cloud Practitioner (target)</span>
-        <span class="skill-tag">ISO 17025 Compliance</span>
-      </div>
-    </div>
-
+<!-- Keep your existing HTML structure, just update the text content -->
+
+<section class="hero">
+  <h1>Idi Ooko</h1>
+  <h2>Aspiring DevOps Engineer | IT Support Professional</h2>
+  <p class="tagline">
+    Building a career path toward DevOps through hands-on homelab projects, automation 
+    experiments, and continuous learning. Google IT Support certified, currently pursuing 
+    AWS Cloud Practitioner and Security+ certifications.
+  </p>
+  <a href="#contact" class="cta-button">Let's Connect →</a>
+</section>
+
+<section class="about">
+  <h2>About Me</h2>
+  <p>
+    I'm Idi Ooko, a <strong>Continuous Improvement Technician</strong> at Daikin Industries 
+    by day and a <strong>hands-on IT learner</strong> by night. My career goal is to become 
+    a <strong>DevOps Engineer</strong>, and I'm building toward that through personal homelab 
+    projects, self-directed learning, and formal certifications.
+  </p>
+  
+  <p>
+    I'm currently seeking <strong>IT apprenticeships</strong> or <strong>entry-level 
+    DevOps/infrastructure roles</strong> where I can learn from experienced teams while 
+    contributing technical skills in Linux, Docker, automation, and troubleshooting.
+  </p>
+
+  <h3>My Background</h3>
+  
+  <div class="background-section">
+    <h4>Professional Experience:</h4>
+    <ul>
+      <li><strong>Continuous Improvement Technician</strong> (current) — Supporting ISO 17025 
+          lab compliance, collaborating with software engineers on internal tools</li>
+      <li><strong>Tier 2 Technical Support</strong> — Advanced Apple device troubleshooting, 
+          ticketing systems, customer-facing technical communication</li>
+      <li><strong>IT Help Desk</strong> — Campus support, hardware deployments, Jira-based 
+          ticket resolution</li>
+    </ul>
+
+    <h4>What I'm Learning:</h4>
+    <ul>
+      <li>Linux system administration and Docker containerization (homelab environment)</li>
+      <li>Python and Bash scripting for automation</li>
+      <li>AWS cloud fundamentals and security best practices</li>
+      <li>CI/CD concepts through personal GitHub Actions experiments</li>
+    </ul>
+
+    <h4>Certifications & Education:</h4>
+    <ul>
+      <li>✓ Google IT Support Professional Certificate (Dec 2024)</li>
+      <li>⏳ AWS Cloud Practitioner (in progress, target: July 2026)</li>
+      <li>⏳ CompTIA Security+ (in progress, target: July 2026)</li>
+      <li>🎓 Bachelor of Science, Information Technology at WGU (graduating 2028)</li>
+    </ul>
   </div>
 </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-      <h2 class="section-title">Let's Connect</h2>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Ready to create something amazing?</h3>
-          <p>
-            I’m always open to connecting with peers, mentors, and teams interested in
-            process improvement, homelab experiments, or creative approaches to
-           technology. Whether it’s building workflows, experimenting with Linux and Docker,
-            or sharing ideas around my Personal Jarvis, I enjoy learning through collaboration.
-          </p>
+<section class="projects">
+  <h2>Projects (Personal Learning Environment)</h2>
+  
+  <div class="project-card">
+    <h3>🧠 Second Brain - AI-Driven Personal Automation System</h3>
+    <p class="project-context"><strong>Context:</strong> Personal homelab project practicing containerization and API integration</p>
+    <p class="project-goal"><strong>Goal:</strong> Learn Docker orchestration, API consumption, and automation workflows</p>
+    
+    <p><strong>What I Built:</strong></p>
+    <ul>
+      <li>Self-hosted dashboard using Flask, Streamlit, and Docker containers</li>
+      <li>Integrated Google Calendar, Notion, and Apple Health APIs for task automation</li>
+      <li>Implemented ChromaDB vector search across 2,000+ chat logs for data indexing practice</li>
+    </ul>
+    
+    <p><strong>Technologies:</strong> Python, Flask, Streamlit, Docker, ChromaDB, API Integration</p>
+    <p><strong>Skills Practiced:</strong> Docker networking, RESTful APIs, Python scripting, troubleshooting service dependencies</p>
+    
+    <p><strong>What I Learned:</strong> How to orchestrate multi-container applications, debug API authentication issues, and maintain service reliability in a homelab environment.</p>
+  </div>
 
-          <ul class="contact-links">
-            <li>
-              <a
-                href="https://github.com/N3onKashimo"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>github.com/N3onKashimo</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/imooko/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>linkedin.com/in/imooko</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+  <div class="project-card">
+    <h3>🏠 Linux Homelab & Self-Hosted Cloud Alternative</h3>
+    <p class="project-context"><strong>Context:</strong> Personal infrastructure project replacing iCloud with self-hosted solution</p>
+    <p class="project-goal"><strong>Goal:</strong> Practice Linux system administration and learn Docker-based service deployment</p>
+    
+    <p><strong>What I Built:</strong></p>
+    <ul>
+      <li>Linux Mint-based homelab using CasaOS as personal cloud platform</li>
+      <li>Automated photo/video backup system with cross-device syncing (iPhone, Android, local storage)</li>
+      <li>Deduplication pipeline using Bash scripts to improve storage efficiency</li>
+    </ul>
+    
+    <p><strong>Technologies:</strong> Linux Mint, CasaOS, Docker, Bash, Networking</p>
+    <p><strong>Skills Practiced:</strong> Linux permissions, Docker volumes, cron jobs, storage management, network troubleshooting</p>
+    
+    <p><strong>What I Learned:</strong> How to manage persistent storage, configure container networking, and build reliable backup workflows without relying on commercial cloud services.</p>
+  </div>
 
-        <div class="availability">
-          <div class="availability-status">
-            <div class="availability-dot"></div>
-            <span>Available for Freelance</span>
-          </div>
-          <p>Currently accepting new projects and collaborations</p>
-          <p
-            style="margin-top: 1rem; color: var(--color-tertiary); font-size: 0.875rem;"
-          >
-            Based in Texas • Mexican heritage
-          </p>
-        </div>
-      </div>
-    </section>
+  <div class="project-card">
+    <h3>🎮 Minecraft Server: Nightly Backups & Restore</h3>
+    <p class="project-context"><strong>Context:</strong> Personal project to practice system administration and disaster recovery</p>
+    <p class="project-goal"><strong>Goal:</strong> Build automated backup system with monitoring and quick restore capability</p>
+    
+    <p><strong>What I Built:</strong></p>
+    <ul>
+      <li>Automated nightly backup system using rclone + cron</li>
+      <li>Cloud sync to Oracle Free Tier storage</li>
+      <li>Log rotation and monitoring scripts</li>
+      <li>One-click restore script for disaster recovery practice</li>
+    </ul>
+    
+    <p><strong>Technologies:</strong> Bash, rclone, cron, Oracle Cloud, Linux</p>
+    <p><strong>Skills Practiced:</strong> Automation scripting, cloud storage integration, monitoring, disaster recovery</p>
+    
+    <p><strong>What I Learned:</strong> How to design resilient backup systems, schedule automated tasks, and implement monitoring for service reliability.</p>
+  </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>
-        &copy; {currentYear} Idi Ooko. Crafted with passion using Astro.
-      </p>
-    </footer>
-    <script>
-      // Theme management
-      const themeToggle = document.querySelector(".theme-toggle");
-      const themeIcon = document.querySelector(".theme-icon");
-      const html = document.documentElement;
+  <p style="text-align: center; margin-top: 2rem;">
+    <a href="https://github.com/N3onKashimo" class="cta-button">View All Projects on GitHub →</a>
+  </p>
+</section>
 
-      // Check for saved theme or default to light mode
-      const savedTheme = localStorage.getItem("theme") || "light";
-      html.setAttribute("data-theme", savedTheme);
-      updateThemeIcon(savedTheme);
-      function updateThemeIcon(theme: string) {
-        if (themeIcon) {
-          themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
-        }
-      }
+<section class="connect" id="contact">
+  <h2>Let's Connect</h2>
+  
+  <p>
+    I'm actively seeking <strong>IT apprenticeships</strong>, <strong>entry-level DevOps roles</strong>, 
+    and <strong>Technical Solutions Engineer</strong> positions where I can:
+  </p>
+  
+  <ul>
+    <li>✅ Learn from experienced teams in production environments</li>
+    <li>✅ Apply my hands-on homelab experience to real-world infrastructure</li>
+    <li>✅ Continue building toward a DevOps engineering career</li>
+    <li>✅ Contribute troubleshooting skills, automation mindset, and enthusiasm for learning</li>
+  </ul>
 
-      function toggleTheme() {
-        const currentTheme = html.getAttribute("data-theme");
-        const newTheme = currentTheme === "dark" ? "light" : "dark";
+  <h3>Target Roles:</h3>
+  <ul>
+    <li>IT Apprenticeship programs (Google, Microsoft, etc.)</li>
+    <li>Junior DevOps Engineer / Infrastructure Associate</li>
+    <li>Technical Solutions Engineer (entry-level)</li>
+    <li>IT Support Engineer (with growth path to DevOps)</li>
+  </ul>
 
-        html.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
-        updateThemeIcon(newTheme);
-      }
+  <h3>Why Work With Me:</h3>
+  <ul>
+    <li>Google IT Support certified with practical homelab experience</li>
+    <li>Strong troubleshooting background from Tier 2 technical support</li>
+    <li>Self-directed learner who builds real projects, not just tutorials</li>
+    <li>Experience collaborating across teams in professional environment</li>
+    <li>Mexican heritage (eligible for Mexico-based opportunities)</li>
+    <li>Based in Dallas, TX — open to relocation for the right opportunity</li>
+  </ul>
 
-      if (themeToggle) {
-        themeToggle.addEventListener("click", toggleTheme);
-      }
+  <div class="contact-links">
+    <p>📧 <strong>Email:</strong> idimooko@gmail.com</p>
+    <p>💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/imooko">linkedin.com/in/imooko</a></p>
+    <p>🐙 <strong>GitHub:</strong> <a href="https://github.com/N3onKashimo">github.com/N3onKashimo</a></p>
+    <p>📍 <strong>Location:</strong> Dallas, Texas</p>
+  </div>
 
-      // Ensure video plays
-      document.addEventListener("DOMContentLoaded", function () {
-        const video = document.querySelector(".hero-video") as HTMLVideoElement;
-        if (video) {
-          video.play().catch((e: any) => {
-            console.log("Video autoplay failed:", e);
-          });
-        }
-      });
+  <p style="margin-top: 2rem; text-align: center;">
+    <strong>Currently available for:</strong> IT apprenticeships starting Spring/Summer 2026
+  </p>
+</section>
 
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const href = (e.currentTarget as HTMLAnchorElement).getAttribute(
-            "href"
-          );
-          if (href) {
-            const target = document.querySelector(href);
-            if (target) {
-              target.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            }
-          }
-        });
-      });
-
-      // Navigation background on scroll
-      window.addEventListener("scroll", () => {
-        const nav = document.querySelector(".nav");
-        if (nav) {
-          const currentTheme = html.getAttribute("data-theme");
-          if (window.scrollY > 100) {
-            (nav as HTMLElement).style.background =
-              currentTheme === "dark"
-                ? "rgba(10, 10, 10, 0.98)"
-                : "rgba(255, 255, 255, 0.98)";
-          } else {
-            (nav as HTMLElement).style.background =
-              currentTheme === "dark"
-                ? "rgba(10, 10, 10, 0.95)"
-                : "rgba(255, 255, 255, 0.95)";
-          }
-        }
-      }); // Keyboard accessibility for theme toggle
-      if (themeToggle) {
-        themeToggle.addEventListener("keydown", function (e) {
-          const keyEvent = e as KeyboardEvent;
-          if (keyEvent.key === "Enter" || keyEvent.key === " ") {
-            e.preventDefault();
-            toggleTheme();
-          }
-        });
-      }
-    </script>
-  </body>
-</html>
+<footer>
+  <p>Based in Texas • Mexican heritage</p>
+  <p>&copy; {currentYear} Idi Ooko. Built with Astro.</p>
+  <p style="font-size: 0.875rem; color: var(--color-tertiary);">
+    <em>I use AI tools responsibly to accelerate learning and debugging while ensuring I understand underlying concepts.</em>
+  </p>
+</footer>
