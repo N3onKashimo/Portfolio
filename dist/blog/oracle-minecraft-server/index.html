@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-4dqtj3le> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v5.16.11"><meta name="description" content="How I turned free Oracle credits into a 24/7 Minecraft server. A crash course in Linux commands, port forwarding, and why sysadmin skills matter — even for gaming."><meta name="keywords" content="Personal, UX Design, UI Development, Idi Ooko, Google Engineer, Running, a, Free, Minecraft, Server, on, Oracle, Cloud"><meta name="author" content="Idi Ooko"><meta name="robots" content="index, follow"><meta name="language" content="English"><!-- Open Graph / Facebook --><meta property="og:type" content="article"><meta property="og:url" content="https://ididev.netlify.app/blog/oracle-minecraft-server"><meta property="og:title" content="Running a Free Minecraft Server on Oracle Cloud | Idi Ooko Blog"><meta property="og:description" content="How I turned free Oracle credits into a 24/7 Minecraft server. A crash course in Linux commands, port forwarding, and why sysadmin skills matter — even for gaming."><meta property="og:image" content="https://ididev.netlify.app/png/preview.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Idi Ooko at Google Office"><meta property="og:site_name" content="Idi Ooko Portfolio"><meta property="og:locale" content="en_US"><meta property="article:published_time" content="2021-11-12T00:00:00Z"><meta property="article:author" content="Idi Ooko"><meta property="article:section" content="Personal"><meta property="article:tag" content="Personal"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://ididev.netlify.app/blog/oracle-minecraft-server"><meta property="twitter:title" content="Running a Free Minecraft Server on Oracle Cloud | Idi Ooko Blog"><meta property="twitter:description" content="How I turned free Oracle credits into a 24/7 Minecraft server. A crash course in Linux commands, port forwarding, and why sysadmin skills matter — even for gaming."><meta property="twitter:image" content="https://ididev.netlify.app/png/preview.jpg"><meta property="twitter:image:alt" content="Idi Ooko at Google Office"><meta property="twitter:creator" content="@deveronikkahri"><!-- LinkedIn --><meta property="article:author" content="Idi Ooko"><meta property="article:publisher" content="https://www.linkedin.com/in/imooko/"><!-- Canonical URL --><link rel="canonical" href="https://ididev.netlify.app/blog/oracle-minecraft-server"><!-- Schema.org structured data --><script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.excerpt,
+        "image": defaultImage,
+        "author": {
+          "@type": "Person",
+          "name": "Idi Ooko",
+          "url": "https://ididev.netlify.app/",
+          "sameAs": [
+            "https://github.com/N3onKashimo",
+            "https://www.linkedin.com/in/imooko/",
+          ]
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Idi Ooko",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://ididev.netlify.app/favicon.svg"
+          }
+        },
+        "datePublished": `${post.date}T00:00:00Z`,
+        "dateModified": `${post.date}T00:00:00Z`,
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": fullUrl
+        }
+      }
+    </script><!-- Ultra-modern typography from Google Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"><title>Running a Free Minecraft Server on Oracle Cloud • Idi Ooko</title><link rel="stylesheet" href="/assets/balancing-drama-and-it-projects.BilUJGkY.css"></head> <body data-astro-cid-4dqtj3le> <!-- Navigation --> <nav class="nav" data-astro-cid-4dqtj3le> <div class="nav-container" data-astro-cid-4dqtj3le> <a href="/" class="nav-logo" data-astro-cid-4dqtj3le>idi.dev</a> <ul class="nav-links" data-astro-cid-4dqtj3le> <li data-astro-cid-4dqtj3le><a href="/" class="nav-link" data-astro-cid-4dqtj3le>Home</a></li> <li data-astro-cid-4dqtj3le><a href="/#about" class="nav-link" data-astro-cid-4dqtj3le>About</a></li> <li data-astro-cid-4dqtj3le><a href="/#skills" class="nav-link" data-astro-cid-4dqtj3le>Skills</a></li> <li data-astro-cid-4dqtj3le><a href="/blog" class="nav-link" data-astro-cid-4dqtj3le>Blog</a></li> <li data-astro-cid-4dqtj3le><a href="/#contact" class="nav-link" data-astro-cid-4dqtj3le>Contact</a></li> </ul> </div> </nav> <!-- Article Content --> <main class="article-container" data-astro-cid-4dqtj3le> <header class="article-header" data-astro-cid-4dqtj3le> <a href="/blog" class="back-to-blog" data-astro-cid-4dqtj3le>
+← Back to Blog
+</a> <div class="article-meta" data-astro-cid-4dqtj3le> <span class="article-category" data-astro-cid-4dqtj3le>Personal</span> <span data-astro-cid-4dqtj3le>•</span> <time datetime="2021-11-12" data-astro-cid-4dqtj3le>November 11, 2021</time> <span data-astro-cid-4dqtj3le>•</span> <span data-astro-cid-4dqtj3le>4 min read</span> </div> <h1 class="article-title" data-astro-cid-4dqtj3le>Running a Free Minecraft Server on Oracle Cloud</h1> <p class="article-excerpt" data-astro-cid-4dqtj3le>How I turned free Oracle credits into a 24/7 Minecraft server. A crash course in Linux commands, port forwarding, and why sysadmin skills matter — even for gaming.</p> </header> <article class="article-content" data-astro-cid-4dqtj3le>  <h2>Why Oracle, Why Minecraft?</h2> <p>
+I’ve always been the kind of person who looks for the free option first.
+    Paying monthly for a Minecraft server? Not happening. After digging around,
+    I found out Oracle has this “Always Free” cloud tier that gives you two VMs
+    you can run forever. Perfect. Free is my favorite price.
+</p> <p>
+At first, I wasn’t thinking “cloud computing lab” or “sysadmin practice.” I
+    just wanted a way to keep a world up 24/7 without my laptop cooking itself
+    to death. But once I started setting it up, I realized there was a little
+    more to it than just double-clicking a server icon.
+</p> <h2>Cheap (Well, Free) Hardware</h2> <p>
+Oracle’s free VMs aren’t powerful — 1 CPU and 1GB of RAM — but Minecraft
+    doesn’t need much. And since it’s free, if I broke something I could just
+    delete the VM and spin up a new one. Honestly, that’s what made it fun: low
+    stakes, no bill, plenty of room to mess around.
+</p> <h2>SSH Adventures</h2> <p>
+The first time I booted the VM I was staring at a black screen with a
+    blinking cursor. No buttons, no icons, no clue. That’s when I had to figure
+    out SSH — basically, logging into the server through the terminal. Once I
+    got in, it was like talking to the computer directly. A little intimidating
+    at first, but kind of addicting once I realized every command actually did
+    something.
+</p> <pre><code># connect into the VM
+ssh ubuntu@public-ip
+
+# basic survival move
+sudo apt update && sudo apt upgrade -y
+</code></pre> <p>
+That’s how I started every session: patching it, breaking it, fixing it
+    again.
+</p> <h2>Getting Minecraft Running</h2> <p>
+I grabbed the Minecraft server .jar, installed Java, and hit “run.” Easy.
+    Except nobody else could join. Turns out Oracle doesn’t just let traffic
+    through. I had to open up port <code>25565</code> on their side and the VM’s
+    firewall. Basically, two layers of “nope” I had to turn into “yes.” Took me
+    a few tries, but eventually it worked. My friends joined, and the world was
+    alive.
+</p> <blockquote>
+“There’s nothing like spending hours fixing firewall rules just to play
+    Minecraft for free.”
+</blockquote> <h2>Free Means Flexible</h2> <p>
+Once the server was stable, I realized I could use these free VMs for more
+    than just Minecraft. I messed around with Plex for media, tried setting up
+    Nextcloud for file storage, even threw WireGuard on there for a VPN. It
+    wasn’t about running perfect services — it was about seeing what I could get
+    away with on free hardware.
+</p> <p>
+The best part? If I trashed the VM, who cared. Just delete, rebuild, move
+    on. No sunk cost, no stress.
+</p> <h2>What I Learned (Besides Saving $)</h2> <ul> <li> <strong>Linux is trial by error:</strong> You don’t really learn it until
+      you break stuff and have to fix it.
+</li> <li> <strong>Networking isn’t optional:</strong> Firewalls and ports will
+      humble you, no matter what you’re running.
+</li> <li> <strong>Backups matter:</strong> Trust me, friends will never forgive you
+      if the world disappears.
+</li> <li> <strong>Free is motivating:</strong> I wouldn’t have learned half this if
+      Oracle was charging me $20 a month.
+</li> </ul> <h2>Looking Back</h2> <p>
+My “free Minecraft server” ended up being my crash course in cloud basics.
+    I wasn’t out to become an IT pro that day — I just wanted a game server
+    without paying. But along the way I picked up Linux, networking, firewalls,
+    and a little confidence in breaking things and putting them back together.
+</p> <p>
+Free servers, free lessons. That’s kind of been my approach ever since.
+</p>  </article> </main> <!-- Footer --> <footer class="footer" data-astro-cid-4dqtj3le> <p data-astro-cid-4dqtj3le>&copy; 2026 Idi Ooko. Crafted with passion using Astro.</p> </footer> <script type="module">window.addEventListener("scroll",()=>{const e=document.querySelector(".nav");e&&(window.scrollY>100?e.style.background="rgba(255, 255, 255, 0.98)":e.style.background="rgba(255, 255, 255, 0.95)")});</script> </body> </html>

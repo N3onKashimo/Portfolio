@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ididev.netlify.app/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    
+  </url>
+  <url>
+    <loc>https://ididev.netlify.app//blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    
+  </url>
+  <url>
+    <loc>https://ididev.netlify.app//blog/the-art-of-minimal-ux-design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ididev.netlify.app//blog/building-scalable-angular-applications</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-10</lastmod>
+  </url>
+  <url>
+    <loc>https://ididev.netlify.app//blog/my-journey-from-mexico-to-google</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-05</lastmod>
+  </url>
+  <url>
+    <loc>https://ididev.netlify.app//blog/devops-culture-in-modern-teams</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-11-28</lastmod>
+  </url>
+  <url>
+    <loc>https://ididev.netlify.app//blog/design-systems-with-figma</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://ididev.netlify.app//blog/the-kawaii-aesthetic-in-professional-work</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-11-15</lastmod>
+  </url>
+</urlset>
